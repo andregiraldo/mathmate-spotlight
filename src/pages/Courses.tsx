@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NavBar from '../components/NavBar';
 import CoursePreview from '../components/CoursePreview';
@@ -6,67 +5,39 @@ import Footer from '../components/Footer';
 import { BookOpen, Clock, Users, BarChart } from 'lucide-react';
 
 const CoursesPage = () => {
+  // Modifica este array con tus cursos reales
   const courses = [
     {
-      id: "algebra",
-      title: "Álgebra Fundamental",
-      description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas. Este curso cubre ecuaciones lineales y cuadráticas, sistemas de ecuaciones, polinomios, funciones y aplicaciones en problemas cotidianos.",
-      level: "Principiante",
-      duration: "8 semanas",
-      students: 120,
-      topics: ["Ecuaciones lineales", "Ecuaciones cuadráticas", "Sistemas de ecuaciones", "Polinomios", "Funciones"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      id: "curso1",
+      title: "Nombre de tu Curso 1",
+      description: "Descripción detallada de tu primer curso. Explica qué aprenderán los estudiantes, qué problemas ayudará a resolver y cuáles son los beneficios de tomarlo.",
+      level: "Nivel del curso",
+      duration: "Duración del curso",
+      students: 0, // Número de estudiantes que han tomado el curso
+      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
+      image: "/imagen-curso1.jpg" // Ruta a la imagen de tu curso
     },
     {
-      id: "calculo",
-      title: "Cálculo Diferencial",
-      description: "Domina las técnicas de diferenciación y sus aplicaciones en problemas del mundo real. Estudiarás límites, continuidad, derivadas, reglas de diferenciación, optimización y aplicaciones científicas del cálculo.",
-      level: "Intermedio",
-      duration: "10 semanas",
-      students: 85,
-      topics: ["Límites y continuidad", "Derivadas", "Reglas de diferenciación", "Optimización", "Aplicaciones científicas"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      id: "curso2",
+      title: "Nombre de tu Curso 2",
+      description: "Descripción detallada de tu segundo curso. Haz que sea específico y atractivo para tu audiencia objetivo.",
+      level: "Nivel del curso",
+      duration: "Duración del curso",
+      students: 0, // Número de estudiantes que han tomado el curso
+      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
+      image: "/imagen-curso2.jpg" // Ruta a la imagen de tu curso
     },
     {
-      id: "estadistica",
-      title: "Estadística y Probabilidad",
-      description: "Aprende a analizar datos, hacer predicciones y tomar decisiones basadas en evidencia. El curso incluye estadística descriptiva e inferencial, probabilidad, distribuciones, pruebas de hipótesis y regresión.",
-      level: "Intermedio",
-      duration: "12 semanas",
-      students: 95,
-      topics: ["Estadística descriptiva", "Probabilidad", "Distribuciones", "Pruebas de hipótesis", "Regresión"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      id: "curso3",
+      title: "Nombre de tu Curso 3",
+      description: "Descripción detallada de tu tercer curso. Menciona los requisitos previos si los hay y los resultados esperados al finalizar.",
+      level: "Nivel del curso",
+      duration: "Duración del curso",
+      students: 0, // Número de estudiantes que han tomado el curso
+      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
+      image: "/imagen-curso3.jpg" // Ruta a la imagen de tu curso
     },
-    {
-      id: "geometria",
-      title: "Geometría Analítica",
-      description: "Explora la relación entre álgebra y geometría, aprendiendo a resolver problemas geométricos utilizando métodos algebraicos. Estudiarás coordenadas cartesianas, rectas, cónicas, vectores y transformaciones.",
-      level: "Intermedio",
-      duration: "8 semanas",
-      students: 70,
-      topics: ["Coordenadas cartesianas", "Rectas y planos", "Cónicas", "Vectores", "Transformaciones"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-    },
-    {
-      id: "avanzado",
-      title: "Matemáticas Avanzadas",
-      description: "Un curso de nivel superior que abarca temas como cálculo multivariable, ecuaciones diferenciales, análisis complejo y álgebra lineal. Diseñado para estudiantes que buscan profundizar en conceptos matemáticos complejos.",
-      level: "Avanzado",
-      duration: "14 semanas",
-      students: 45,
-      topics: ["Cálculo multivariable", "Ecuaciones diferenciales", "Análisis complejo", "Álgebra lineal", "Métodos numéricos"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-    },
-    {
-      id: "preparacion",
-      title: "Preparación para Exámenes",
-      description: "Curso intensivo diseñado para ayudarte a prepararte para exámenes de ingreso a la universidad, oposiciones o evaluaciones importantes. Incluye estrategias de estudio, práctica intensiva y simulacros de examen.",
-      level: "Varios",
-      duration: "6 semanas",
-      students: 110,
-      topics: ["Estrategias de estudio", "Técnicas de resolución de problemas", "Gestión del tiempo", "Simulacros de examen", "Reducción de ansiedad"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-    }
+    // Puedes añadir más cursos según sea necesario
   ];
 
   return (

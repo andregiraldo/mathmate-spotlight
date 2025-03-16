@@ -1,64 +1,64 @@
-
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Star, User, Calendar, Quote } from 'lucide-react';
 
 const TestimonialsPage = () => {
+  // Modifica este array con más testimonios de tus estudiantes
   const testimonials = [
     {
       id: 1,
-      name: "Carlos Méndez",
-      role: "Estudiante de Ingeniería",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      name: "Nombre del Estudiante 1",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante1.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Marzo 2023",
-      comment: "La profesora María transformó completamente mi relación con las matemáticas. Sus métodos de enseñanza claros y su paciencia infinita me ayudaron a superar mis dificultades y ahora disfruto resolviendo problemas complejos."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 1. Puedes incluir más detalles aquí que en la versión resumida de la página principal."
     },
     {
       id: 2,
-      name: "Laura Gómez",
-      role: "Estudiante de Bachillerato",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      name: "Nombre del Estudiante 2",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante2.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Febrero 2023",
-      comment: "Gracias a las clases de la profesora María, pude mejorar significativamente mis calificaciones en matemáticas. Su enfoque personalizado y su capacidad para explicar conceptos difíciles de forma sencilla son incomparables."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 2."
     },
     {
       id: 3,
-      name: "Miguel Torres",
-      role: "Estudiante de Física",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      name: "Nombre del Estudiante 3",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante3.jpg", // Ruta a la foto del estudiante
       rating: 4,
-      date: "Enero 2023",
-      comment: "La profesora tiene una habilidad única para hacer que las matemáticas sean interesantes y relevantes. Sus ejemplos prácticos y su entusiasmo por la materia son contagiosos. Altamente recomendada."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 3."
     },
     {
       id: 4,
-      name: "Ana Martínez",
-      role: "Estudiante Universitaria",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      name: "Nombre del Estudiante 4",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante4.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Diciembre 2022",
-      comment: "Las clases con María han sido fundamentales para mi éxito académico. Su manera de explicar conceptos complejos de forma clara y su disponibilidad para resolver dudas hacen que aprender matemáticas sea mucho más fácil y agradable."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 4."
     },
     {
       id: 5,
-      name: "Javier López",
-      role: "Preparación para Oposiciones",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      name: "Nombre del Estudiante 5",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante5.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Noviembre 2022",
-      comment: "Busqué ayuda para preparar un examen de oposición que incluía matemáticas avanzadas. María diseñó un plan de estudio personalizado que se adaptaba perfectamente a mis necesidades. Gracias a ella, pude superar la prueba con una excelente puntuación."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 5."
     },
     {
       id: 6,
-      name: "Elena Sánchez",
-      role: "Profesora de Primaria",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      name: "Nombre del Estudiante 6",
+      role: "Curso o Nivel",
+      image: "/foto-estudiante6.jpg", // Ruta a la foto del estudiante
       rating: 4,
-      date: "Octubre 2022",
-      comment: "Como profesora de primaria, necesitaba reforzar mis conocimientos matemáticos para poder enseñar mejor a mis alumnos. Las clases con María no solo mejoraron mi comprensión de las matemáticas, sino que también me proporcionaron herramientas pedagógicas valiosas."
+      date: "Mes Año",
+      comment: "Testimonio completo del estudiante 6."
     }
   ];
 

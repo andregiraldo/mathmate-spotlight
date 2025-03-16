@@ -23,9 +23,10 @@ const About = () => {
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/10 rounded-full"></div>
               <div className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                {/* Cambia esta URL por la URL de tu foto */}
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="Profesora de matemáticas" 
+                  src="/tu-foto.jpg" 
+                  alt="Tu nombre - Profesora de matemáticas" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -33,8 +34,10 @@ const About = () => {
           </div>
           
           <div className="animate-fade-left">
-            <h3 className="text-3xl font-serif font-medium mb-6">María Santiago</h3>
+            {/* Modifica este nombre por el tuyo */}
+            <h3 className="text-3xl font-serif font-medium mb-6">Tu Nombre</h3>
             <p className="text-lg text-muted-foreground mb-8">
+              {/* Personaliza esta biografía con tu información */}
               Profesora de matemáticas con una pasión por hacer que los conceptos complejos sean accesibles para todos. Mi enfoque de enseñanza combina rigor académico con métodos innovadores que inspiran a los estudiantes a desarrollar un amor por las matemáticas.
             </p>
             
@@ -44,8 +47,9 @@ const About = () => {
                   <GraduationCap size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Doctorado en Matemáticas</h4>
-                  <p className="text-sm text-muted-foreground">Universidad Complutense</p>
+                  {/* Actualiza tu formación académica */}
+                  <h4 className="font-medium mb-1">Tu Grado Académico</h4>
+                  <p className="text-sm text-muted-foreground">Tu Universidad</p>
                 </div>
               </div>
               
@@ -54,8 +58,9 @@ const About = () => {
                   <Award size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Reconocimiento a la Excelencia</h4>
-                  <p className="text-sm text-muted-foreground">Academia Nacional, 2022</p>
+                  {/* Actualiza tus reconocimientos */}
+                  <h4 className="font-medium mb-1">Tu Reconocimiento</h4>
+                  <p className="text-sm text-muted-foreground">Institución, Año</p>
                 </div>
               </div>
               
@@ -64,8 +69,9 @@ const About = () => {
                   <BookOpen size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Publicaciones Académicas</h4>
-                  <p className="text-sm text-muted-foreground">15+ artículos en revistas especializadas</p>
+                  {/* Actualiza tus publicaciones o materiales */}
+                  <h4 className="font-medium mb-1">Tus Publicaciones</h4>
+                  <p className="text-sm text-muted-foreground">Detalles sobre tus materiales</p>
                 </div>
               </div>
               
@@ -74,8 +80,9 @@ const About = () => {
                   <Users size={24} />
                 </div>
                 <div>
+                  {/* Actualiza el número de estudiantes */}
                   <h4 className="font-medium mb-1">Estudiantes Guiados</h4>
-                  <p className="text-sm text-muted-foreground">500+ a lo largo de mi carrera</p>
+                  <p className="text-sm text-muted-foreground">Tu número de estudiantes a lo largo de tu carrera</p>
                 </div>
               </div>
             </div>
