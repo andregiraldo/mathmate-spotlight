@@ -54,8 +54,9 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       <div className={cn(
-        "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out bg-background/95 backdrop-blur-sm md:hidden pt-20",
-        isOpen ? "translate-x-0" : "translate-x-full"
+        "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden pt-20",
+        isOpen ? "translate-x-0" : "translate-x-full",
+        "bg-white dark:bg-background" // Cambiado para tener un fondo blanco sólido en lugar de transparente
       )}>
         <div className="flex flex-col items-center space-y-6 p-8 text-center">
           <Link to="/" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Inicio</Link>
