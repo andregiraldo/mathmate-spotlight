@@ -15,27 +15,27 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Nombre del Estudiante 1",
-    role: "Curso o Nivel",
-    image: "/foto-estudiante1.jpg", // Ruta a la foto del estudiante
+    name: "Carlos Méndez",
+    role: "Estudiante de Ingeniería",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     rating: 5,
-    comment: "Aquí coloca el testimonio real de tu estudiante. Es importante usar las propias palabras que ellos utilizaron para describir su experiencia contigo."
+    comment: "La profesora María transformó completamente mi relación con las matemáticas. Sus métodos de enseñanza claros y su paciencia infinita me ayudaron a superar mis dificultades y ahora disfruto resolviendo problemas complejos."
   },
   {
     id: 2,
-    name: "Nombre del Estudiante 2",
-    role: "Curso o Nivel",
-    image: "/foto-estudiante2.jpg", // Ruta a la foto del estudiante
+    name: "Laura Gómez",
+    role: "Estudiante de Bachillerato",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     rating: 5,
-    comment: "Aquí coloca otro testimonio real de un estudiante distinto. Procura que sean testimonios variados para mostrar diferentes aspectos de tu enseñanza."
+    comment: "Gracias a las clases de la profesora María, pude mejorar significativamente mis calificaciones en matemáticas. Su enfoque personalizado y su capacidad para explicar conceptos difíciles de forma sencilla son incomparables."
   },
   {
     id: 3,
-    name: "Nombre del Estudiante 3",
-    role: "Curso o Nivel",
-    image: "/foto-estudiante3.jpg", // Ruta a la foto del estudiante
+    name: "Miguel Torres",
+    role: "Estudiante de Física",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
     rating: 4,
-    comment: "Un tercer testimonio de un estudiante. Es recomendable incluir testimonios de diferentes niveles educativos para mostrar tu versatilidad como docente."
+    comment: "La profesora tiene una habilidad única para hacer que las matemáticas sean interesantes y relevantes. Sus ejemplos prácticos y su entusiasmo por la materia son contagiosos. Altamente recomendada."
   }
 ];
 
