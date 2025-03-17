@@ -25,7 +25,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 {/* Cambia esta URL por la URL de tu foto */}
                 <img 
-                  src="/foto trabajo.jpg" 
+                  src="/Foto Math.jpg" 
                   alt="Tu nombre - Profesora de matemáticas" 
                   className="w-full h-full object-cover"
                 />
@@ -59,7 +59,7 @@ const About = () => {
                 </div>
                 <div>
                   {/* Actualiza tus reconocimientos */}
-                  <h4 className="font-medium mb-1">Tu Reconocimiento</h4>
+                  <h4 className="font-medium mb-1">Reconocimiento a la Excelencia</h4>
                   <p className="text-sm text-muted-foreground">Institución, Año</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ const About = () => {
                 <div>
                   {/* Actualiza el número de estudiantes */}
                   <h4 className="font-medium mb-1">Estudiantes Guiados</h4>
-                  <p className="text-sm text-muted-foreground">+100</p>
+                  <p className="text-sm text-muted-foreground">500+ a lo largo de mi carrera</p>
                 </div>
               </div>
             </div>
