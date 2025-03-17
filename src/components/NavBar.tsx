@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -7,25 +6,35 @@ import { MenuIcon, X } from 'lucide-react';
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (isMobile && window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
 
+    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobile]); // Se actualiza cuando cambia el tamaño de la pantalla
 
   return (
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3",
-        scrolled ? "glass-card" : "bg-transparent"
+        scrolled && isMobile ? "bg-white shadow-md" : "bg-transparent"
       )}
     >
       <div className="mathmate-container flex items-center justify-between">
@@ -71,3 +80,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
