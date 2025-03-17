@@ -25,7 +25,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 {/* Cambia esta URL por la URL de tu foto */}
                 <img 
-                  src="/tu-foto.jpg" 
+                  src="/foto trabajo.jpg" 
                   alt="Tu nombre - Profesora de matemáticas" 
                   className="w-full h-full object-cover"
                 />
@@ -35,7 +35,7 @@ const About = () => {
           
           <div className="animate-fade-left">
             {/* Modifica este nombre por el tuyo */}
-            <h3 className="text-3xl font-serif font-medium mb-6">Luz Marina V</h3>
+            <h3 className="text-3xl font-serif font-medium mb-6">Luz Marina Vergara</h3>
             <p className="text-lg text-muted-foreground mb-8">
               {/* Personaliza esta biografía con tu información */}
               Profesora de matemáticas con una pasión por hacer que los conceptos complejos sean accesibles para todos. Mi enfoque de enseñanza combina rigor académico con métodos innovadores que inspiran a los estudiantes a desarrollar un amor por las matemáticas.
@@ -82,7 +82,7 @@ const About = () => {
                 <div>
                   {/* Actualiza el número de estudiantes */}
                   <h4 className="font-medium mb-1">Estudiantes Guiados</h4>
-                  <p className="text-sm text-muted-foreground">Tu número de estudiantes a lo largo de tu carrera</p>
+                  <p className="text-sm text-muted-foreground">+100</p>
                 </div>
               </div>
             </div>
