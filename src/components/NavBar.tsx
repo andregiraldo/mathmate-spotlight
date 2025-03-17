@@ -14,7 +14,7 @@ const NavBar = () => {
     };
 
     const handleScroll = () => {
-      if (isMobile && window.scrollY > 10) {
+      if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -28,13 +28,15 @@ const NavBar = () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isMobile]); // Se actualiza cuando cambia el tamaño de la pantalla
+  }, []);
 
   return (
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3",
-        scrolled && isMobile ? "bg-white shadow-md" : "bg-transparent"
+        isMobile 
+          ? (scrolled ? "bg-white shadow-md" : "bg-transparent") // Mobile: cambia a blanco con sombra
+          : (scrolled ? "glass-card" : "bg-transparent") // Desktop: mantiene el efecto glass-card
       )}
     >
       <div className="mathmate-container flex items-center justify-between">
@@ -65,7 +67,7 @@ const NavBar = () => {
       <div className={cn(
         "fixed inset-0 z-50 w-full h-full transform transition-transform duration-300 ease-in-out md:hidden pt-20",
         isOpen ? "translate-x-0" : "translate-x-full",
-        "bg-white dark:bg-gray-900/95 shadow-lg" // Fondo sólido con una leve transparencia en modo oscuro
+        "bg-white dark:bg-gray-900/95 shadow-lg"
       )}>
         <div className="flex flex-col items-center space-y-6 p-8 text-center">
           <Link to="/" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Inicio</Link>
@@ -80,4 +82,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 
