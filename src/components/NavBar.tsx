@@ -10,12 +10,10 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth < 768) { // Solo afecta a pantallas móviles
       if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
-      }
       }
     };
 
