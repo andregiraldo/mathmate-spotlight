@@ -1,39 +1,35 @@
-
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import { 
-  Clock, 
-  Users, 
-  BookOpen, 
-  ChevronRight, 
-  CreditCard, 
-  Mail, 
-  WhatsApp 
-} from 'lucide-react';
-import { courses } from '../data/courses';
-import { Button } from '../components/ui/button';
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { courses } from "../data/courses";
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowRight,
+  Check,
+  MessageCircle, // Replacing WhatsApp with MessageCircle
+} from "lucide-react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import { Button } from "@/components/ui/button";
 
 const CourseDetail = () => {
   const { courseId } = useParams<{ courseId: string }>();
-  const course = courses.find(c => c.id === courseId);
+  const [course, setCourse] = useState(null);
+
+  useEffect(() => {
+    const foundCourse = courses.find((c) => c.id === courseId);
+    if (foundCourse) {
+      setCourse(foundCourse);
+    } else {
+      console.log(`Course with id ${courseId} not found`);
+    }
+  }, [courseId]);
 
   if (!course) {
     return (
-      <div className="min-h-screen">
-        <NavBar />
-        <div className="mathmate-container py-32 text-center">
-          <h1 className="text-3xl font-bold mb-4">Curso no encontrado</h1>
-          <p className="mb-8 text-muted-foreground">El curso que buscas no existe o ha sido removido.</p>
-          <Link 
-            to="/courses" 
-            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-          >
-            Ver todos los cursos
-          </Link>
-        </div>
-        <Footer />
+      <div className="flex items-center justify-center h-screen">
+        <span className="loading loading-spinner text-accent"></span>
       </div>
     );
   }
@@ -41,137 +37,171 @@ const CourseDetail = () => {
   return (
     <div className="min-h-screen">
       <NavBar />
-      
-      <div className="pt-24 pb-16">
+      <div className="pt-24 pb-12">
         <div className="mathmate-container">
-          {/* Breadcrumb */}
-          <nav className="flex mb-8 text-sm">
-            <Link to="/" className="text-muted-foreground hover:text-foreground">Inicio</Link>
-            <ChevronRight className="mx-2 h-4 w-4 text-muted-foreground" />
-            <Link to="/courses" className="text-muted-foreground hover:text-foreground">Cursos</Link>
-            <ChevronRight className="mx-2 h-4 w-4 text-muted-foreground" />
-            <span>{course.title}</span>
-          </nav>
-          
-          {/* Course Header */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="animate-fade-right">
-              <div className="rounded-xl overflow-hidden">
-                <img 
-                  src={course.image} 
-                  alt={course.title} 
-                  className="w-full h-72 object-cover"
-                />
-              </div>
-            </div>
-            
-            <div className="animate-fade-left">
-              <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent mb-4">
-                {course.level}
-              </span>
-              <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-              <p className="text-xl text-muted-foreground mb-6">
-                {course.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-6 mb-8">
-                <div className="flex items-center gap-2">
-                  <div className="bg-primary/10 p-2 rounded-full text-primary">
-                    <Clock size={20} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Duración</p>
-                    <p className="font-medium">{course.duration}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <div className="bg-primary/10 p-2 rounded-full text-primary">
-                    <Users size={20} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Estudiantes</p>
-                    <p className="font-medium">{course.students}</p>
-                  </div>
-                </div>
-                
-                {course.price && (
-                  <div className="flex items-center gap-2">
-                    <div className="bg-primary/10 p-2 rounded-full text-primary">
-                      <CreditCard size={20} />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Precio</p>
-                      <p className="font-medium">{course.price}</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              <Link to={`/courses/${course.id}/booking`}>
-                <Button size="lg" className="w-full md:w-auto">
-                  Reservar clase
-                </Button>
-              </Link>
-            </div>
-          </div>
-          
-          {/* Course Content */}
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2 animate-fade-up">
-              <div className="glass-card rounded-xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Descripción del curso</h2>
-                <p className="text-muted-foreground mb-8">
-                  {course.longDescription}
+              <div className="mb-8">
+                <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent mb-4">
+                  {course.level}
+                </span>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                  {course.title}
+                </h1>
+                <p className="text-lg text-muted-foreground mb-8">
+                  {course.description}
                 </p>
-                
-                <h3 className="text-xl font-bold mb-4">Lo que aprenderás</h3>
-                <ul className="space-y-3 mb-8">
-                  {course.topics?.map((topic, index) => (
-                    <li key={index} className="flex items-start">
-                      <BookOpen className="mr-3 h-5 w-5 text-accent shrink-0 mt-0.5" />
-                      <span>{topic}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            
-            <div className="animate-fade-left">
-              <div className="glass-card rounded-xl p-8 sticky top-24">
-                <h3 className="text-xl font-bold mb-6">¿Necesitas más información?</h3>
-                
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Si tienes preguntas sobre este curso, no dudes en contactarme para recibir información personalizada.
-                  </p>
-                  
-                  <div className="pt-4">
-                    <Link to="/contact">
-                      <Button variant="outline" className="w-full mb-3">
-                        <Mail className="mr-2" />
-                        Contactar
-                      </Button>
-                    </Link>
-                    
-                    <a 
-                      href={`https://wa.me/573106574475?text=Hola,%20me%20interesa%20el%20curso%20de%20${encodeURIComponent(course.title)}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="outline" className="w-full bg-[#25D366] text-white hover:bg-[#25D366]/90">
-                        <WhatsApp className="mr-2" />
-                        WhatsApp
-                      </Button>
-                    </a>
+
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Clock size={16} />
+                    {course.duration}
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <User size={16} />
+                    {course.instructor}
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Calendar size={16} />
+                    {course.schedule}
                   </div>
                 </div>
+
+                <Link to={`/courses/${courseId}/booking`}>
+                  <Button size="lg">
+                    Inscribirme <ArrowRight className="ml-2" size={20} />
+                  </Button>
+                </Link>
               </div>
+            </div>
+
+            <div className="animate-fade-left">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="rounded-xl shadow-lg aspect-video w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
       </div>
-      
+
+      <section className="py-16 bg-secondary/50">
+        <div className="mathmate-container">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="section-title">¿Qué aprenderás?</h2>
+            <p className="section-subtitle">
+              Este curso está diseñado para brindarte una comprensión completa
+              de los temas clave.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {course.modules.map((module, index) => (
+              <div
+                key={index}
+                className="glass-card rounded-xl p-6 animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <h3 className="text-xl font-medium mb-2">{module.title}</h3>
+                <p className="text-muted-foreground">{module.description}</p>
+                <ul className="list-disc pl-4 mt-4 text-muted-foreground">
+                  {module.topics.map((topic, i) => (
+                    <li key={i}>{topic}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mathmate-container">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="section-title">Requisitos del curso</h2>
+            <p className="section-subtitle">
+              Asegúrate de cumplir con estos requisitos antes de inscribirte.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-2xl font-medium mb-4 animate-fade-up">
+                Conocimientos previos
+              </h3>
+              <ul className="list-disc pl-4 text-muted-foreground animate-fade-up">
+                {course.requirements.knowledge.map((req, index) => (
+                  <li key={index}>{req}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-medium mb-4 animate-fade-up">
+                Materiales necesarios
+              </h3>
+              <ul className="list-disc pl-4 text-muted-foreground animate-fade-up">
+                {course.requirements.materials.map((req, index) => (
+                  <li key={index}>{req}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-secondary/50">
+        <div className="mathmate-container">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="section-title">Testimonios</h2>
+            <p className="section-subtitle">
+              Mira lo que dicen nuestros estudiantes sobre este curso.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {course.testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="glass-card rounded-xl p-6 animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center mb-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <h4 className="font-medium">{testimonial.name}</h4>
+                    <p className="text-xs text-muted-foreground">
+                      {testimonial.title}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">{testimonial.comment}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mathmate-container">
+          <div className="text-center animate-fade-up">
+            <h2 className="section-title">¿Tienes preguntas?</h2>
+            <p className="section-subtitle">
+              Contáctanos para resolver tus dudas.
+            </p>
+            <div className="mt-8">
+              <Button variant="outline">
+                <MessageCircle className="mr-2" size={20} /> Contáctanos
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
