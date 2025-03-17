@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { courses } from "../data/courses";
@@ -7,7 +8,7 @@ import {
   User,
   ArrowRight,
   Check,
-  MessageCircle, // Replacing WhatsApp with MessageCircle
+  MessageCircle,
 } from "lucide-react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -34,6 +35,47 @@ const CourseDetail = () => {
     );
   }
 
+  // Mock data since it's not in the course object
+  const mockModules = [
+    {
+      title: "Fundamentos",
+      description: "Conceptos básicos necesarios para avanzar en el curso",
+      topics: ["Introducción", "Conceptos clave", "Ejercicios básicos"]
+    },
+    {
+      title: "Aplicaciones prácticas",
+      description: "Cómo aplicar lo aprendido en situaciones reales",
+      topics: ["Problemas del mundo real", "Estudios de caso", "Proyectos"]
+    },
+    {
+      title: "Nivel avanzado",
+      description: "Profundización en conceptos complejos",
+      topics: ["Técnicas avanzadas", "Resolución de problemas complejos", "Investigación"]
+    }
+  ];
+
+  // Mock testimonials
+  const mockTestimonials = [
+    {
+      name: "María González",
+      title: "Estudiante",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      comment: "Este curso transformó mi manera de entender las matemáticas."
+    },
+    {
+      name: "Juan Pérez",
+      title: "Profesional",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      comment: "Contenido práctico y explicado de manera clara y concisa."
+    },
+    {
+      name: "Ana Rodríguez",
+      title: "Docente",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+      comment: "Recomiendo este curso a todos mis estudiantes."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <NavBar />
@@ -49,7 +91,7 @@ const CourseDetail = () => {
                   {course.title}
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  {course.description}
+                  {course.longDescription || course.description}
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-8">
@@ -59,11 +101,11 @@ const CourseDetail = () => {
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <User size={16} />
-                    {course.instructor}
+                    Profesor especializado
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar size={16} />
-                    {course.schedule}
+                    Horario flexible
                   </div>
                 </div>
 
@@ -97,7 +139,7 @@ const CourseDetail = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {course.modules.map((module, index) => (
+            {mockModules.map((module, index) => (
               <div
                 key={index}
                 className="glass-card rounded-xl p-6 animate-fade-up"
@@ -119,32 +161,34 @@ const CourseDetail = () => {
       <section className="py-16">
         <div className="mathmate-container">
           <div className="text-center mb-12 animate-fade-up">
-            <h2 className="section-title">Requisitos del curso</h2>
+            <h2 className="section-title">Contenido del curso</h2>
             <p className="section-subtitle">
-              Asegúrate de cumplir con estos requisitos antes de inscribirte.
+              Los temas que abordarás en este curso.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-medium mb-4 animate-fade-up">
-                Conocimientos previos
+                Temas principales
               </h3>
               <ul className="list-disc pl-4 text-muted-foreground animate-fade-up">
-                {course.requirements.knowledge.map((req, index) => (
-                  <li key={index}>{req}</li>
-                ))}
+                {course.topics ? course.topics.map((topic, index) => (
+                  <li key={index} className="mb-2">{topic}</li>
+                )) : (
+                  <li>Contenido en desarrollo</li>
+                )}
               </ul>
             </div>
 
             <div>
               <h3 className="text-2xl font-medium mb-4 animate-fade-up">
-                Materiales necesarios
+                Requerimientos
               </h3>
               <ul className="list-disc pl-4 text-muted-foreground animate-fade-up">
-                {course.requirements.materials.map((req, index) => (
-                  <li key={index}>{req}</li>
-                ))}
+                <li>Conocimientos básicos de matemáticas</li>
+                <li>Cuaderno para tomar notas</li>
+                <li>Calculadora científica (opcional)</li>
               </ul>
             </div>
           </div>
@@ -161,7 +205,7 @@ const CourseDetail = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {course.testimonials.map((testimonial, index) => (
+            {mockTestimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="glass-card rounded-xl p-6 animate-fade-up"
@@ -195,9 +239,11 @@ const CourseDetail = () => {
               Contáctanos para resolver tus dudas.
             </p>
             <div className="mt-8">
-              <Button variant="outline">
-                <MessageCircle className="mr-2" size={20} /> Contáctanos
-              </Button>
+              <a href="https://wa.me/573106574475" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline">
+                  <MessageCircle className="mr-2" size={20} /> Contáctanos
+                </Button>
+              </a>
             </div>
           </div>
         </div>

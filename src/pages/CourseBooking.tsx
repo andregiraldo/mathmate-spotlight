@@ -31,6 +31,7 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { SubmissionSuccess } from "@/components/contact/SubmissionSuccess";
+import { toast } from "@/components/ui/use-toast";
 
 // Form schema with validation
 const formSchema = z.object({
@@ -66,6 +67,11 @@ const CourseBooking = () => {
       setCourse(foundCourse);
     } else {
       console.log(`Course with id ${courseId} not found`);
+      toast({
+        title: "Error al cargar el curso",
+        description: "No se pudo encontrar el curso solicitado.",
+        variant: "destructive",
+      });
     }
   }, [courseId]);
 
@@ -83,8 +89,18 @@ const CourseBooking = () => {
 
   if (!course) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        Course not found
+      <div className="min-h-screen">
+        <NavBar />
+        <div className="flex items-center justify-center h-[60vh]">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold mb-4">Curso no encontrado</h2>
+            <p className="text-muted-foreground mb-6">Lo sentimos, no pudimos encontrar el curso que estás buscando.</p>
+            <Link to="/courses">
+              <Button>Ver todos los cursos</Button>
+            </Link>
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }
@@ -143,7 +159,7 @@ const CourseBooking = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <CreditCard className="h-5 w-5 text-muted-foreground" />
-                  <span>Precio: {course.price}</span>
+                  <span>Precio: {course.price || "Consultar precio"}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5 text-muted-foreground" />
