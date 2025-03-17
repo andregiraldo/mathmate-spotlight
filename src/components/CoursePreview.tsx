@@ -1,47 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Clock, BookOpen, Users } from 'lucide-react';
-
-type Course = {
-  id: string;
-  title: string;
-  description: string;
-  level: string;
-  duration: string;
-  students: number;
-  image: string;
-};
-
-const courses: Course[] = [
-  {
-    id: "algebra",
-    title: "Álgebra Fundamental",
-    description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas.",
-    level: "Principiante",
-    duration: "8 semanas",
-    students: 120,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-  },
-  {
-    id: "calculo",
-    title: "Cálculo Diferencial",
-    description: "Domina las técnicas de diferenciación y sus aplicaciones en problemas del mundo real.",
-    level: "Intermedio",
-    duration: "10 semanas",
-    students: 85,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-  },
-  {
-    id: "estadistica",
-    title: "Estadística y Probabilidad",
-    description: "Aprende a analizar datos, hacer predicciones y tomar decisiones basadas en evidencia.",
-    level: "Intermedio",
-    duration: "12 semanas",
-    students: 95,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-  }
-];
+import { ArrowUpRight, Clock, Users } from 'lucide-react';
+import { courses } from '../data/courses';
 
 const CoursePreview = () => {
   return (

@@ -1,45 +1,12 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import CoursePreview from '../components/CoursePreview';
 import Footer from '../components/Footer';
-import { BookOpen, Clock, Users, BarChart } from 'lucide-react';
+import { BookOpen, Clock, Users, ArrowUpRight } from 'lucide-react';
+import { courses } from '../data/courses';
 
 const CoursesPage = () => {
-  // Modifica este array con tus cursos reales
-  const courses = [
-    {
-      id: "curso1",
-      title: "Nombre de tu Curso 1",
-      description: "Descripción detallada de tu primer curso. Explica qué aprenderán los estudiantes, qué problemas ayudará a resolver y cuáles son los beneficios de tomarlo.",
-      level: "Nivel del curso",
-      duration: "Duración del curso",
-      students: 0, // Número de estudiantes que han tomado el curso
-      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
-      image: "/imagen-curso1.jpg" // Ruta a la imagen de tu curso
-    },
-    {
-      id: "curso2",
-      title: "Nombre de tu Curso 2",
-      description: "Descripción detallada de tu segundo curso. Haz que sea específico y atractivo para tu audiencia objetivo.",
-      level: "Nivel del curso",
-      duration: "Duración del curso",
-      students: 0, // Número de estudiantes que han tomado el curso
-      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
-      image: "/imagen-curso2.jpg" // Ruta a la imagen de tu curso
-    },
-    {
-      id: "curso3",
-      title: "Nombre de tu Curso 3",
-      description: "Descripción detallada de tu tercer curso. Menciona los requisitos previos si los hay y los resultados esperados al finalizar.",
-      level: "Nivel del curso",
-      duration: "Duración del curso",
-      students: 0, // Número de estudiantes que han tomado el curso
-      topics: ["Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5"],
-      image: "/imagen-curso3.jpg" // Ruta a la imagen de tu curso
-    },
-    // Puedes añadir más cursos según sea necesario
-  ];
-
   return (
     <div className="min-h-screen">
       <NavBar />
@@ -92,9 +59,12 @@ const CoursesPage = () => {
                       </div>
                     </div>
                     
-                    <button className="w-full text-center py-2 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 transition-colors">
+                    <Link 
+                      to={`/courses/${course.id}`} 
+                      className="w-full text-center py-2 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 transition-colors inline-block"
+                    >
                       Ver detalles
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
