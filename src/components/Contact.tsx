@@ -59,8 +59,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <a href="mailto:contact@mathmate.com" className="text-muted-foreground hover:text-accent">
-                      contact@mathmate.com
+                    <a href="mailto:andrea.girald29@gmail.com" className="text-muted-foreground hover:text-accent">
+                      andrea.girald29@gmail.com
                     </a>
                   </div>
                 </div>
@@ -71,8 +71,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Teléfono</h4>
-                    <a href="tel:+34600123456" className="text-muted-foreground hover:text-accent">
-                      +34 600 123 456
+                    <a href="tel:+57 310 657 4475" className="text-muted-foreground hover:text-accent">
+                      +57 310 657 4475
                     </a>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium mb-1">Ubicación</h4>
                     <p className="text-muted-foreground">
-                      Madrid, España<br />
+                      Bogotá, Colombia<br />
                       Clases presenciales y online
                     </p>
                   </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                 <h4 className="font-medium mb-4">Horario de atención</h4>
                 <div className="space-y-2 text-muted-foreground">
                   <p>Lunes a Viernes: 9:00 - 19:00</p>
-                  <p>Sábados: 10:00 - 14:00</p>
+                  <p>Sábados: 08:00 - 12:00</p>
                   <p>Domingos: Cerrado</p>
                 </div>
               </div>
