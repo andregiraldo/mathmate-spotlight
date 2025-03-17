@@ -10,10 +10,12 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) { // Solo afecta a pantallas móviles
       if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
       }
     };
 
@@ -25,7 +27,7 @@ const NavBar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3",
-        scrolled ? "glass-card" : "bg-transparent"
+        scrolled ? "bg-white shadow-md md:bg-transparent" : "bg-transparent"
       )}
     >
       <div className="mathmate-container flex items-center justify-between">
