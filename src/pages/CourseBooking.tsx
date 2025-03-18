@@ -93,7 +93,7 @@ ${data.comments ? `*Comentarios:* ${data.comments}` : ""}
 `;
     
     // Enviar notificación a tu WhatsApp personal siempre
-    const adminWhatsAppNumber = "573106574475"; // Tu número de WhatsApp
+    const adminWhatsAppNumber = "573217529132"; // Tu número de WhatsApp
     window.open(`https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`, "_blank");
     
     // Si el usuario seleccionó WhatsApp como método de pago, redirigir también al usuario
