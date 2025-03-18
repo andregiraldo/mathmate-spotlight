@@ -14,6 +14,24 @@ export type Course = {
 
 export const courses: Course[] = [
   {
+    id: "clase",
+    title: "Clase Personalizada",
+    description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas.",
+    longDescription: "El curso de Álgebra Fundamental está diseñado para estudiantes que desean fortalecer sus bases matemáticas. Desde ecuaciones lineales hasta funciones cuadráticas, este curso te proporcionará las herramientas necesarias para resolver problemas algebraicos y te preparará para estudios más avanzados en matemáticas, ciencias e ingeniería.",
+    level: "Principiante",
+    duration: "8 semanas",
+    students: 120,
+    price: "$250.000",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    topics: [
+      "Ecuaciones lineales y sistemas",
+      "Polinomios y factorización",
+      "Funciones cuadráticas",
+      "Expresiones racionales",
+      "Exponentes y logaritmos"
+    ]
+  },
+  {
     id: "algebra",
     title: "Álgebra Fundamental",
     description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas.",
