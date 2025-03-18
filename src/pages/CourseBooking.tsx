@@ -75,12 +75,11 @@ const CourseBooking = () => {
     }
   }, [courseId]);
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Form submitted:", data);
-    
-    // Preparar mensaje para WhatsApp con todos los datos
-    const courseTitle = course?.title || "Curso no especificado";
-    const message = `
+  const onSubmit = async (data: FormValues) => {
+  console.log("Form submitted:", data);
+  
+  const courseTitle = course?.title || "Curso no especificado";
+  const message = `
 🔔 *NUEVA RESERVA DE CURSO* 🔔
 --------------------------------
 *Curso:* ${courseTitle}
@@ -90,29 +89,33 @@ const CourseBooking = () => {
 *Método de pago:* ${data.paymentMethod === "online" ? "Pago en línea" : "WhatsApp"}
 ${data.comments ? `*Comentarios:* ${data.comments}` : ""}
 --------------------------------
-`;
-    
-    // Enviar notificación a tu WhatsApp personal siempre
-    const adminWhatsAppNumber = "573217529132"; // Tu número de WhatsApp
-    window.open(`https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`, "_blank");
-    
-    // Si el usuario seleccionó WhatsApp como método de pago, redirigir también al usuario
-    if (data.paymentMethod === "whatsapp") {
-      const userMessage = `Hola, estoy interesado en el curso ${courseTitle}. Mi nombre es ${data.name}.`;
-      // Usar setTimeout para evitar que el navegador bloquee la apertura de múltiples ventanas
-      setTimeout(() => {
-        window.open(`https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(userMessage)}`, "_blank");
-      }, 500);
-    }
-    
-    // Mostrar toast de confirmación
-    toast({
-      title: "Reserva enviada",
-      description: "Hemos recibido tu reserva. Te contactaremos pronto.",
+  `;
+
+  // Enviar mensaje a WhatsApp del admin a través de una API (ejemplo con fetch)
+  try {
+    await fetch("https://tu-backend.com/enviar-whatsapp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        phone: "573217529132", // Número del admin
+        message: message,
+      }),
     });
-    
-    setIsSubmitted(true);
-  };
+  } catch (error) {
+    console.error("Error enviando mensaje a WhatsApp:", error);
+  }
+
+  // Mostrar mensaje de reserva enviada en pantalla
+  toast({
+    title: "Reserva enviada",
+    description: "Hemos recibido tu reserva. Te contactaremos pronto.",
+  });
+
+  setIsSubmitted(true);
+};
+
 
   if (!course) {
     return (
