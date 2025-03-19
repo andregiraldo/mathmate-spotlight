@@ -38,7 +38,7 @@ const SocialMediaSection = () => {
           <div className="glass-card rounded-2xl p-8 shadow-lg text-center">
             <Instagram size={48} className="text-pink-500 mx-auto mb-4" />
             <h3 className="font-medium text-xl">Instagram</h3>
-            <p className="text-lg font-bold text-accent">{socialStats.instagram.toLocaleString()} Seguidores</p>
+            <p className="text-lg font-bold text-primary">{socialStats.instagram.toLocaleString()} Seguidores</p>
             <a
               href="https://www.instagram.com/tu-pagina" // Reemplaza con tu URL real
               target="_blank"
