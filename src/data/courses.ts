@@ -22,7 +22,7 @@ export const courses: Course[] = [
     duration: "60 minutos",
     students: 1,
     price: "$40.000",
-    image: "/cartoon math 1.jpg",
+    image: "https://imgur.com/382wvRi",
     topics: [
       "Ecuaciones lineales y sistemas",
       "Polinomios y factorización",
@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/cartoon math 2.jpg",
+    image: "https://imgur.com/GoebqvK",
     topics: [
       "Factorización y Polinomios",
       "Potenciación",
