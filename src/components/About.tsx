@@ -25,7 +25,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 {/* Cambia esta URL por la URL de tu foto */}
                 <img 
-                  src="/Foto Math.jpg" 
+                  src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
                   alt="Tu nombre - Profesora de matemáticas" 
                   className="w-full h-full object-cover"
                 />
