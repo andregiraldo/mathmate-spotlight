@@ -34,8 +34,16 @@ const About = () => {
           </div>
           
           <div className="animate-fade-left">
-            {/* Modifica este nombre por el tuyo */}
-            <h3 className="text-3xl font-serif font-medium mb-6">Luz Marina Vergara</h3>
+            <div className="flex items-center mb-6">
+              <h3 className="text-3xl font-serif font-medium">Luz Marina Vergara</h3>
+              <div className="ml-4 h-14 w-14 rounded-full overflow-hidden border-2 border-accent">
+                <img 
+                  src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
+                  alt="Luz Marina Vergara" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
             <p className="text-lg text-muted-foreground mb-8">
               {/* Personaliza esta biografía con tu información */}
               Profesora de matemáticas con una pasión por hacer que los conceptos complejos sean accesibles para todos. Mi enfoque de enseñanza combina rigor académico con métodos innovadores que inspiran a los estudiantes a desarrollar un amor por las matemáticas.
