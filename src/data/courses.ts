@@ -22,7 +22,7 @@ export const courses: Course[] = [
     duration: "60 minutos",
     students: 1,
     price: "$40.000",
-    image: "/lovable-uploads/cartoonmath2.jpg",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Ecuaciones lineales y sistemas",
       "Polinomios y factorización",
@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "https://imgur.com/GoebqvK",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Factorización y Polinomios",
       "Potenciación",
@@ -62,7 +62,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/cartoon math 4.jpg",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Integrales Indefinidas",
       "Integrales Definidas",
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/cartoon-math 3.jpg",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Límites y continuidad",
       "Función",
@@ -100,7 +100,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/cartoon math 5.jpg",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Funciones Trigonometricas",
       "Graficas",
@@ -120,7 +120,7 @@ export const courses: Course[] = [
     duration: "12 semanas",
     students: 95,
     price: "$320.000",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Estadística descriptiva",
       "Probabilidad y distribuciones",
