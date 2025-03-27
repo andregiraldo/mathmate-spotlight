@@ -18,11 +18,11 @@ export const courses: Course[] = [
     title: "Clase Personalizada",
     description: "Aprende a tu ritmo con explicaciones claras y ejercicios adaptados a ti. Juntos haremos que las matemáticas sean más fáciles y comprensibles.",
     longDescription: "Cada estudiante aprende de forma diferente, y en esta clase personalizada nos enfocamos en tu ritmo y necesidades. Con explicaciones claras, ejercicios adaptados y un enfoque práctico, harás que las matemáticas sean más comprensibles y hasta divertidas. ¡Atrévete a aprender sin miedo y a dominar los números con confianza!.",
-    level: "Principiante",
+    level: "Todos los niveles",
     duration: "60 minutos",
     students: 1,
     price: "$40.000",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "/cartoon math 1.jpg",
     topics: [
       "Ecuaciones lineales y sistemas",
       "Polinomios y factorización",
@@ -36,17 +36,39 @@ export const courses: Course[] = [
     title: "Álgebra Fundamental",
     description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas.",
     longDescription: "El curso de Álgebra Fundamental está diseñado para estudiantes que desean fortalecer sus bases matemáticas. Desde ecuaciones lineales hasta funciones cuadráticas, este curso te proporcionará las herramientas necesarias para resolver problemas algebraicos y te preparará para estudios más avanzados en matemáticas, ciencias e ingeniería.",
-    level: "Principiante",
-    duration: "8 semanas",
-    students: 120,
-    price: "$250.000",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    level: "Principiante o Intermedio",
+    duration: "4 semanas",
+    students: 3,
+    price: "$150.000",
+    image: "/cartoon math 2.jpg",
     topics: [
+      "Factorización y Polinomios",
+      "Potenciación",
+      "Radicación",
       "Ecuaciones lineales y sistemas",
-      "Polinomios y factorización",
       "Funciones cuadráticas",
+      "Funciones trigonometricas",
+      "Productos notables",
       "Expresiones racionales",
       "Exponentes y logaritmos"
+    ]
+  },
+  {
+    id: "calculo integral",
+    title: "Cálculo Integral",
+    description: "Aprende a analizar datos, hacer predicciones y tomar decisiones basadas en evidencia.",
+    longDescription: "El curso de Estadística y Probabilidad te introduce en el mundo del análisis de datos y la inferencia estadística. Desde la estadística descriptiva hasta los conceptos de probabilidad, distribuciones y pruebas de hipótesis, este curso te dará las herramientas para interpretar datos, hacer predicciones fundamentadas y tomar decisiones basadas en evidencia en diversos campos profesionales.",
+    level: "Intermedio",
+    duration: "4 semanas",
+    students: 3,
+    price: "$150.000",
+    image: "/cartoon math 4.jpg",
+    topics: [
+      "Integrales Indefinidas",
+      "Integrales Definidas",
+      "Integración por Partes",
+      "Función Primitiva",
+      "Teorema fundamental del calculo"
     ]
   },
   {
@@ -55,16 +77,38 @@ export const courses: Course[] = [
     description: "Domina las técnicas de diferenciación y sus aplicaciones en problemas del mundo real.",
     longDescription: "El curso de Cálculo Diferencial explora los conceptos fundamentales del cálculo, centrándose en límites, continuidad y derivadas. Aprenderás a calcular derivadas usando diferentes reglas y técnicas, y cómo aplicarlas para resolver problemas de optimización, tasas relacionadas y análisis de funciones. Este curso es esencial para estudiantes de ciencias, ingeniería y economía.",
     level: "Intermedio",
-    duration: "10 semanas",
-    students: 85,
-    price: "$300.000",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    duration: "4 semanas",
+    students: 3,
+    price: "$150.000",
+    image: "/cartoon-math 3.jpg",
     topics: [
       "Límites y continuidad",
+      "Función",
+      "Puntos Críticos",
       "Definición de derivada",
       "Reglas de derivación",
       "Aplicaciones: máximos y mínimos",
       "Derivación implícita y tasas relacionadas"
+    ]
+  },
+  {
+    id: "trigonometria",
+    title: "Trigonometría",
+    description: "Aprende a analizar datos, hacer predicciones y tomar decisiones basadas en evidencia.",
+    longDescription: "El curso de Estadística y Probabilidad te introduce en el mundo del análisis de datos y la inferencia estadística. Desde la estadística descriptiva hasta los conceptos de probabilidad, distribuciones y pruebas de hipótesis, este curso te dará las herramientas para interpretar datos, hacer predicciones fundamentadas y tomar decisiones basadas en evidencia en diversos campos profesionales.",
+    level: "Intermedio",
+    duration: "4 semanas",
+    students: 3,
+    price: "$150.000",
+    image: "/cartoon math 5.jpg",
+    topics: [
+      "Funciones Trigonometricas",
+      "Graficas",
+      "Razones Trigonometricas",
+      "Identidades Trigonometricas",
+      "Estadistica",
+      "Estadistica Descriptiva",
+      "Estadistica Diferencial"
     ]
   },
   {
