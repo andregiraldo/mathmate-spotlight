@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/cartoon-math-3.png",
     topics: [
       "Factorización y Polinomios",
       "Potenciación",
