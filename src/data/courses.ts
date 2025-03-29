@@ -100,7 +100,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/cartoon-math-6.png",
     topics: [
       "Funciones Trigonometricas",
       "Graficas",
@@ -120,7 +120,7 @@ export const courses: Course[] = [
     duration: "12 semanas",
     students: 95,
     price: "$320.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/cartoon-math-7.png",
     topics: [
       "Estadística descriptiva",
       "Probabilidad y distribuciones",
