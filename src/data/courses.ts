@@ -62,7 +62,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/cartoon-math-4.png",
     topics: [
       "Integrales Indefinidas",
       "Integrales Definidas",
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/cartoon-math-5.png",
     topics: [
       "Límites y continuidad",
       "Función",
