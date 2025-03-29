@@ -22,7 +22,7 @@ export const courses: Course[] = [
     duration: "60 minutos",
     students: 1,
     price: "$40.000",
-    image: "lovable-uploads/a0e6bc14-1091-4a14-ba03-29ca1d157499.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Ecuaciones lineales y sistemas",
       "Polinomios y factorización",
@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "lovable-uploads/df0081c4-a4aa-4bb5-9b32-d82ca090b2e7.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Factorización y Polinomios",
       "Potenciación",
@@ -62,7 +62,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "lovable-uploads/30052f9d-8b73-4ecc-b5f9-7075e1ad4346.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Integrales Indefinidas",
       "Integrales Definidas",
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "lovable-uploads/a0e6bc14-1091-4a14-ba03-29ca1d157499.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Límites y continuidad",
       "Función",
@@ -100,7 +100,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "lovable-uploads/df0081c4-a4aa-4bb5-9b32-d82ca090b2e7.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Funciones Trigonometricas",
       "Graficas",
@@ -120,7 +120,7 @@ export const courses: Course[] = [
     duration: "12 semanas",
     students: 95,
     price: "$320.000",
-    image: "lovable-uploads/30052f9d-8b73-4ecc-b5f9-7075e1ad4346.png",
+    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
     topics: [
       "Estadística descriptiva",
       "Probabilidad y distribuciones",

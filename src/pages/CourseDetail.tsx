@@ -119,13 +119,9 @@ const CourseDetail = () => {
 
             <div className="animate-fade-left">
               <img
-                src={`/${course.image}`}
+                src={course.image}
                 alt={course.title}
                 className="rounded-xl shadow-lg aspect-video w-full h-auto object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "/placeholder.svg";
-                  console.log("Image failed to load:", course.image);
-                }}
               />
             </div>
           </div>

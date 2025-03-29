@@ -31,13 +31,9 @@ const CoursesPage = () => {
               >
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src={`/${course.image}`} 
+                    src={course.image} 
                     alt={course.title} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    onError={(e) => {
-                      e.currentTarget.src = "/placeholder.svg";
-                      console.log("Image failed to load:", course.image);
-                    }}
                   />
                 </div>
                 <div className="p-6">
