@@ -31,7 +31,7 @@ export const submitBooking = async ({ data, courseId, courseTitle }: SubmitBooki
 
     // 2. Enviar datos al webhook con manejo de errores mejorado
     try {
-      const webhookUrl = "http://localhost:5678/webhook-test/form";
+      const webhookUrl = "https://n8n-total.onrender.com/webhook-test/form";
       const webhookData = {
         name: data.name,
         email: data.email,
@@ -59,9 +59,8 @@ export const submitBooking = async ({ data, courseId, courseTitle }: SubmitBooki
       
       const webhookResponse = await Promise.race([webhookPromise, timeoutPromise]);
       
-      if (!webhookResponse.ok) {
-        const errorText = await webhookResponse.text();
-        console.warn("Respuesta no exitosa del webhook:", errorText);
+      if (!(webhookResponse instanceof Response) || !webhookResponse.ok) {
+        console.warn("Respuesta no exitosa del webhook:", webhookResponse);
         // No lanzamos error para que la reserva se considere exitosa
       }
     } catch (webhookError) {
