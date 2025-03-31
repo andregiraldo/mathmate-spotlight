@@ -39,19 +39,21 @@ const CourseBooking = () => {
       
       const courseTitle = course?.title || "Curso no especificado";
       
-      await submitBooking({
+      const result = await submitBooking({
         data,
         courseId,
         courseTitle
       });
 
-      // Mostrar mensaje de reserva enviada en pantalla
-      toast({
-        title: "Reserva enviada con éxito",
-        description: "Hemos recibido tu reserva. Te contactaremos pronto.",
-      });
-
-      setIsSubmitted(true);
+      if (result.success) {
+        // Mostrar mensaje de reserva enviada
+        toast({
+          title: "Reserva enviada con éxito",
+          description: "Hemos recibido tu reserva. Te contactaremos pronto.",
+        });
+        
+        setIsSubmitted(true);
+      }
     } catch (error) {
       console.error("Error en el proceso de reserva:", error);
       toast({
