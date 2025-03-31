@@ -103,7 +103,7 @@ const CourseBooking = () => {
       }
 
       // 2. Enviar datos al webhook
-      const webhookUrl = "http://localhost:5678/webhook-test/21911611-f21b-43bf-aca2-410d35b04319";
+      const webhookUrl = "http://localhost:5678/webhook-test/form";
       const webhookResponse = await fetch(webhookUrl, {
         method: "POST",
         headers: {
