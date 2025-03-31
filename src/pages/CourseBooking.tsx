@@ -103,7 +103,7 @@ const CourseBooking = () => {
       }
 
       // 2. Enviar datos al webhook
-      const webhookUrl = "http://localhost:5678/webhook-test/form";
+      const webhookUrl = "http://localhost:5678/webhook-test/21911611-f21b-43bf-aca2-410d35b04319";
       const webhookResponse = await fetch(webhookUrl, {
         method: "POST",
         headers: {
@@ -192,7 +192,7 @@ const CourseBooking = () => {
             <li>
               <Link to="/courses">Cursos</Link>
             </li>
-            <li>{course.title}</li>
+            <li>{course?.title}</li>
             <li>Reserva</li>
           </ul>
         </div>
@@ -209,13 +209,13 @@ const CourseBooking = () => {
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Volver al curso
               </Link>
-              <h2 className="text-3xl font-semibold mb-4">{course.title}</h2>
-              <p className="text-muted-foreground mb-6">{course.description}</p>
+              <h2 className="text-3xl font-semibold mb-4">{course?.title}</h2>
+              <p className="text-muted-foreground mb-6">{course?.description}</p>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <CreditCard className="h-5 w-5 text-muted-foreground" />
-                  <span>Precio: {course.price || "Consultar precio"}</span>
+                  <span>Precio: {course?.price || "Consultar precio"}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5 text-muted-foreground" />
