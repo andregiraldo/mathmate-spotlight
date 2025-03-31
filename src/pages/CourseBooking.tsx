@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/select";
 import { SubmissionSuccess } from "@/components/contact/SubmissionSuccess";
 import { toast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 // Form schema with validation
 const formSchema = z.object({
@@ -48,6 +49,7 @@ const CourseBooking = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const [course, setCourse] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Initialize react-hook-form
   const form = useForm<FormValues>({
@@ -76,45 +78,69 @@ const CourseBooking = () => {
   }, [courseId]);
 
   const onSubmit = async (data: FormValues) => {
-  console.log("Form submitted:", data);
-  
-  const courseTitle = course?.title || "Curso no especificado";
-  const message = `
-🔔 *NUEVA RESERVA DE CURSO* 🔔
---------------------------------
-*Curso:* ${courseTitle}
-*Nombre:* ${data.name}
-*Email:* ${data.email}
-*Teléfono:* ${data.phone}
-*Método de pago:* ${data.paymentMethod === "online" ? "Pago en línea" : "WhatsApp"}
-${data.comments ? `*Comentarios:* ${data.comments}` : ""}
---------------------------------
-  `;
+    try {
+      setIsSubmitting(true);
+      console.log("Form submitted:", data);
+      
+      const courseTitle = course?.title || "Curso no especificado";
+      
+      // 1. Guardar datos en Supabase
+      const { error: supabaseError } = await supabase
+        .from('course_bookings')
+        .insert({
+          course_id: courseId,
+          course_title: courseTitle,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          payment_method: data.paymentMethod,
+          comments: data.comments || ""
+        });
 
-  // Enviar mensaje a WhatsApp del admin a través de una API (ejemplo con fetch)
-  try {
-    await fetch("https://tu-backend.com/enviar-whatsapp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        phone: "573217529132", // Número del admin
-        message: message,
-      }),
-    });
-  } catch (error) {
-    console.error("Error enviando mensaje a WhatsApp:", error);
-  }
+      if (supabaseError) {
+        console.error("Error guardando en Supabase:", supabaseError);
+        throw new Error("Error al guardar la reserva en la base de datos");
+      }
 
-  // Mostrar mensaje de reserva enviada en pantalla
-  toast({
-    title: "Reserva enviada",
-    description: "Hemos recibido tu reserva. Te contactaremos pronto.",
-  });
+      // 2. Enviar datos al webhook
+      const webhookUrl = "http://localhost:5678/webhook-test/21911611-f21b-43bf-aca2-410d35b04319";
+      const webhookResponse = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          courseTitle: courseTitle,
+          paymentMethod: data.paymentMethod,
+          comments: data.comments
+        })
+      });
 
-  setIsSubmitted(true);
-};
+      if (!webhookResponse.ok) {
+        throw new Error("Error al enviar los datos al webhook");
+      }
+
+      // Mostrar mensaje de reserva enviada en pantalla
+      toast({
+        title: "Reserva enviada con éxito",
+        description: "Hemos recibido tu reserva. Te contactaremos pronto.",
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error en el proceso de reserva:", error);
+      toast({
+        title: "Error en la reserva",
+        description: "Hubo un problema al procesar tu reserva. Por favor, intenta nuevamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
 
   if (!course) {
@@ -296,8 +322,12 @@ ${data.comments ? `*Comentarios:* ${data.comments}` : ""}
                     )}
                   />
                   
-                  <Button type="submit" className="w-full mt-6">
-                    Confirmar Reserva
+                  <Button 
+                    type="submit" 
+                    className="w-full mt-6"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Procesando..." : "Confirmar Reserva"}
                   </Button>
                 </form>
               </Form>
