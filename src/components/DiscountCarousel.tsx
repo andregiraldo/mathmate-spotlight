@@ -16,7 +16,7 @@ const DiscountCarousel = () => {
   const discounts = [
     {
       id: 1,
-      title: "¡Tu primera clase gratis!",
+      title: "¡Tu primera clase gratis! 🔥",
       description: "Empieza tu viaje de aprendizaje matemático sin costo.",
       image: "/lovable-uploads/cartoon-math-3.png",
       link: "/contact",
@@ -64,10 +64,10 @@ const DiscountCarousel = () => {
           >
             <CarouselContent>
               {discounts.map((discount) => (
-                <CarouselItem key={discount.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={discount.id} className="basis-full">
                   <div className="p-1">
                     <Card className="overflow-hidden border-2 hover:border-primary transition-all hover:shadow-md">
-                      <div className="h-48 overflow-hidden">
+                      <div className="h-64 overflow-hidden">
                         <img
                           src={discount.image}
                           alt={discount.title}

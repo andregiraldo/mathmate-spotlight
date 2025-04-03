@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -49,6 +50,7 @@ const NavBar = () => {
           <Link to="/" className="nav-link">Inicio</Link>
           <Link to="/about" className="nav-link">Sobre Mí</Link>
           <Link to="/courses" className="nav-link">Cursos</Link>
+          <Link to="/blog" className="nav-link">Blog</Link>
           <Link to="/testimonials" className="nav-link">Testimonios</Link>
           <Link to="/contact" className="nav-link">Contacto</Link>
         </div>
@@ -73,6 +75,7 @@ const NavBar = () => {
           <Link to="/" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Inicio</Link>
           <Link to="/about" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Sobre Mí</Link>
           <Link to="/courses" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Cursos</Link>
+          <Link to="/blog" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Blog</Link>
           <Link to="/testimonials" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Testimonios</Link>
           <Link to="/contact" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Contacto</Link>
         </div>
@@ -82,5 +85,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
