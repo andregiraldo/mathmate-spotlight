@@ -9,6 +9,8 @@ import SocialMedia from '../components/SocialMedia';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import DiscountCarousel from '../components/DiscountCarousel';
+import BlogPreview from '../components/BlogPreview';
 
 const Index = () => {
   return (
@@ -17,7 +19,9 @@ const Index = () => {
       <Hero />
       <About />
       <CoursePreview />
+      <DiscountCarousel />
       <Features />
+      <BlogPreview />
       <SocialMedia />
       <Testimonials />
       <Contact />
