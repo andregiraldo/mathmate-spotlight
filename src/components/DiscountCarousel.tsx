@@ -8,6 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselDots
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -73,20 +74,23 @@ const DiscountCarousel = () => {
             <CarouselContent>
               {discounts.map((discount) => (
                 <CarouselItem key={discount.id} className="md:basis-1/2 lg:basis-1/3 p-2">
-                  <Card className="overflow-hidden border-none shadow-lg h-full">
-                    <div className={`${discount.bgColor} relative p-6 text-white`}>
+                  <Card className="overflow-hidden border-none shadow-lg h-full rounded-2xl">
+                    <div className={`${discount.bgColor} relative p-6 text-white rounded-t-2xl`}>
                       <span className="absolute right-4 top-4 text-6xl opacity-20 font-serif">
                         {discount.symbol}
                       </span>
                       <h3 className="text-xl font-bold mb-2 relative z-10">{discount.title}</h3>
                       <p className="mb-4 relative z-10">{discount.description}</p>
                       <Link to={discount.link}>
-                        <Button variant="secondary" className="w-full font-bold text-primary-foreground bg-white hover:bg-white/90">
+                        <Button 
+                          variant="default" 
+                          className="w-full font-bold bg-accent text-accent-foreground hover:bg-accent/90"
+                        >
                           ¡Aprovecha ahora! <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
                     </div>
-                    <div className="h-48 overflow-hidden">
+                    <div className="h-48 overflow-hidden rounded-b-2xl">
                       <img
                         src={discount.image}
                         alt={discount.title}
@@ -97,6 +101,9 @@ const DiscountCarousel = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <div className="flex justify-center mt-4">
+              <CarouselDots />
+            </div>
             <CarouselPrevious className="absolute -left-4 md:-left-8" />
             <CarouselNext className="absolute -right-4 md:-right-8" />
           </Carousel>

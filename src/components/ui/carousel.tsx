@@ -250,6 +250,43 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+const CarouselDots = () => {
+  const { api } = useCarousel();
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setActiveIndex(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  if (!api) return null;
+
+  return (
+    <div className="flex space-x-2">
+      {api.scrollSnapList().map((_, index) => (
+        <button
+          key={index}
+          className={cn(
+            "h-2 w-2 rounded-full transition-all duration-300",
+            activeIndex === index 
+              ? "bg-primary w-6" 
+              : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+          )}
+          onClick={() => api.scrollTo(index)}
+        />
+      ))}
+    </div>
+  );
+};
+
 export {
   type CarouselApi,
   Carousel,
@@ -257,4 +294,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots,
 }
