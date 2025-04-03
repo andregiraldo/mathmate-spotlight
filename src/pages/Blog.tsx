@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -7,8 +6,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { blogPosts, blogCategories } from '../data/blog-data';
 
 const Blog = () => {
@@ -41,9 +38,6 @@ const Blog = () => {
               <p className="text-muted-foreground mb-6">
                 En nuestro blog aprenderás cómo estas tecnologías están transformando la educación matemática y abriendo nuevas posibilidades en campos como el análisis de datos, la optimización y la modelización matemática.
               </p>
-              <Button variant="default" className="w-fit" onClick={() => setSelectedCategory('ai')}>
-                Explorar artículos sobre IA <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
             <div className="relative min-h-[300px] md:min-h-0">
               <img 
