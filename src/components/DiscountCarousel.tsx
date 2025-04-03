@@ -20,6 +20,8 @@ const DiscountCarousel = () => {
       description: "Empieza tu viaje de aprendizaje matemático sin costo.",
       image: "/lovable-uploads/cartoon-math-3.png",
       link: "/contact",
+      bgColor: "bg-gradient-to-br from-violet-500 to-purple-700",
+      symbol: "∑",
     },
     {
       id: 2,
@@ -27,6 +29,8 @@ const DiscountCarousel = () => {
       description: "Estudia con amigos y ahorra en tus clases de matemáticas.",
       image: "/lovable-uploads/cartoon-math-4.png",
       link: "/courses",
+      bgColor: "bg-gradient-to-br from-blue-400 to-indigo-600",
+      symbol: "π",
     },
     {
       id: 3,
@@ -34,6 +38,8 @@ const DiscountCarousel = () => {
       description: "Adquiere 10 clases con un 15% de descuento.",
       image: "/lovable-uploads/cartoon-math-5.png",
       link: "/courses",
+      bgColor: "bg-gradient-to-br from-emerald-400 to-teal-600",
+      symbol: "∞",
     },
     {
       id: 4,
@@ -41,6 +47,8 @@ const DiscountCarousel = () => {
       description: "10% de descuento en tu primer mes de clases.",
       image: "/lovable-uploads/cartoon-math-6.png",
       link: "/courses",
+      bgColor: "bg-gradient-to-br from-orange-400 to-pink-600",
+      symbol: "√",
     },
   ];
 
@@ -54,7 +62,7 @@ const DiscountCarousel = () => {
           </p>
         </div>
 
-        <div className="px-10 md:px-14 lg:px-20">
+        <div className="px-4 md:px-8 lg:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -64,27 +72,28 @@ const DiscountCarousel = () => {
           >
             <CarouselContent>
               {discounts.map((discount) => (
-                <CarouselItem key={discount.id} className="basis-full">
-                  <div className="p-1">
-                    <Card className="overflow-hidden border-2 hover:border-primary transition-all hover:shadow-md">
-                      <div className="h-64 overflow-hidden">
-                        <img
-                          src={discount.image}
-                          alt={discount.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="text-xl font-bold mb-2">{discount.title}</h3>
-                        <p className="text-muted-foreground mb-4">{discount.description}</p>
-                        <Link to={discount.link}>
-                          <Button className="w-full">
-                            ¡Aprovecha ahora! <ArrowRight className="ml-2 h-4 w-4" />
-                          </Button>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  </div>
+                <CarouselItem key={discount.id} className="md:basis-1/2 lg:basis-1/3 p-2">
+                  <Card className="overflow-hidden border-none shadow-lg h-full">
+                    <div className={`${discount.bgColor} relative p-6 text-white`}>
+                      <span className="absolute right-4 top-4 text-6xl opacity-20 font-serif">
+                        {discount.symbol}
+                      </span>
+                      <h3 className="text-xl font-bold mb-2 relative z-10">{discount.title}</h3>
+                      <p className="mb-4 relative z-10">{discount.description}</p>
+                      <Link to={discount.link}>
+                        <Button variant="secondary" className="w-full font-bold text-primary-foreground bg-white hover:bg-white/90">
+                          ¡Aprovecha ahora! <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={discount.image}
+                        alt={discount.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
