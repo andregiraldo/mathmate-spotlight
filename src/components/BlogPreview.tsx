@@ -21,6 +21,32 @@ const BlogPreview = () => {
           </p>
         </div>
 
+        {/* New AI and Mathematics Feature Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 bg-secondary/10 rounded-2xl overflow-hidden shadow-lg">
+          <div className="p-8 flex flex-col justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">Inteligencia Artificial en las Matemáticas</h3>
+            <p className="text-muted-foreground mb-4">
+              Descubre cómo la inteligencia artificial está revolucionando el mundo de las matemáticas. Desde algoritmos de aprendizaje automático hasta redes neuronales, la IA ofrece nuevas perspectivas para resolver problemas matemáticos complejos.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              En nuestro blog aprenderás cómo estas tecnologías están transformando la educación matemática y abriendo nuevas posibilidades en campos como el análisis de datos, la optimización y la modelización matemática.
+            </p>
+            <Link to="/blog">
+              <Button variant="default" className="w-fit">
+                Explorar artículos sobre IA <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-0">
+            <img 
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+              alt="Inteligencia Artificial y Matemáticas" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary/10"></div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {latestPosts.map((post) => (
             <Link key={post.id} to={`/blog/${post.slug}`}>
