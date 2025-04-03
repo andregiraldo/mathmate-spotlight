@@ -7,6 +7,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { blogPosts, blogCategories } from '../data/blog-data';
 
 const Blog = () => {
@@ -27,6 +29,30 @@ const Blog = () => {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Explora artículos, consejos y recursos para mejorar tus habilidades matemáticas.
             </p>
+          </div>
+
+          {/* AI and Mathematics Feature Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 bg-secondary/10 rounded-2xl overflow-hidden shadow-lg">
+            <div className="p-8 flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">Inteligencia Artificial en las Matemáticas</h3>
+              <p className="text-muted-foreground mb-4">
+                Descubre cómo la inteligencia artificial está revolucionando el mundo de las matemáticas. Desde algoritmos de aprendizaje automático hasta redes neuronales, la IA ofrece nuevas perspectivas para resolver problemas matemáticos complejos.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                En nuestro blog aprenderás cómo estas tecnologías están transformando la educación matemática y abriendo nuevas posibilidades en campos como el análisis de datos, la optimización y la modelización matemática.
+              </p>
+              <Button variant="default" className="w-fit" onClick={() => setSelectedCategory('ai')}>
+                Explorar artículos sobre IA <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            <div className="relative min-h-[300px] md:min-h-0">
+              <img 
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+                alt="Inteligencia Artificial y Matemáticas" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary/10"></div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
