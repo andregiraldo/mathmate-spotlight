@@ -11,6 +11,8 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import DiscountCarousel from '../components/DiscountCarousel';
 import BlogPreview from '../components/BlogPreview';
+import InteractiveFeatures from '../components/InteractiveFeatures';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -18,6 +20,7 @@ const Index = () => {
       <NavBar />
       <Hero />
       <About />
+      <InteractiveFeatures />
       <CoursePreview />
       <DiscountCarousel />
       <Features />
@@ -26,6 +29,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
