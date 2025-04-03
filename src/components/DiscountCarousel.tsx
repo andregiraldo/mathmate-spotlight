@@ -54,11 +54,13 @@ const DiscountCarousel = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary/10">
-      <div className="mathmate-container">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Promociones Especiales</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+    <section className="py-20 bg-gray-950 text-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-accent">Promociones</span> Especiales
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Aprovecha estas ofertas exclusivas para empezar tu camino hacia el éxito matemático.
           </p>
         </div>
@@ -74,7 +76,7 @@ const DiscountCarousel = () => {
             <CarouselContent>
               {discounts.map((discount) => (
                 <CarouselItem key={discount.id} className="md:basis-1/2 lg:basis-1/3 p-2">
-                  <Card className="overflow-hidden border-none shadow-lg h-full rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <Card className="overflow-hidden border-none shadow-lg h-full rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-gray-900">
                     <div className={`${discount.bgColor} relative p-6 text-white rounded-t-2xl`}>
                       <span className="absolute right-4 top-4 text-6xl opacity-20 font-serif">
                         {discount.symbol}
@@ -104,8 +106,10 @@ const DiscountCarousel = () => {
             <div className="flex justify-center mt-4">
               <CarouselDots />
             </div>
-            <CarouselPrevious className="absolute -left-4 md:-left-8" />
-            <CarouselNext className="absolute -right-4 md:-right-8" />
+            <div className="relative mt-4">
+              <CarouselPrevious className="absolute -left-4 md:-left-8 bg-gray-800 text-white hover:bg-gray-700" />
+              <CarouselNext className="absolute -right-4 md:-right-8 bg-gray-800 text-white hover:bg-gray-700" />
+            </div>
           </Carousel>
         </div>
       </div>
