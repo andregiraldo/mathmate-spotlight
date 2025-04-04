@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Play, 
@@ -28,7 +27,7 @@ const features = [
     icon: MapPin,
     title: "Rutas personalizadas de aprendizaje",
     description: "Desde principiante hasta niveles avanzados con planes adaptados a tus necesidades",
-    image: "/lovable-uploads/cartoon-math-3.png"
+    image: "https://images.unsplash.com/photo-1515378960618-05ce2c7243d0?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 3,
