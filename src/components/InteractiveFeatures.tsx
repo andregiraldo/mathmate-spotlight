@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   Play, 
@@ -8,11 +9,13 @@ import {
   BarChart3, 
   Calendar 
 } from 'lucide-react';
-import { 
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -27,7 +30,7 @@ const features = [
     icon: MapPin,
     title: "Rutas personalizadas de aprendizaje",
     description: "Desde principiante hasta niveles avanzados con planes adaptados a tus necesidades",
-    image: "https://images.unsplash.com/photo-1515378960618-05ce2c7243d0?q=80&w=1000&auto=format&fit=crop"
+    image: "/lovable-uploads/75e6df88-7d5d-44d5-861b-5ce0b13f43b4.png"
   },
   {
     id: 3,
@@ -68,7 +71,7 @@ const features = [
 
 const InteractiveFeatures = () => {
   const [activeFeature, setActiveFeature] = useState(features[0]);
-
+  
   return (
     <div className="py-20 bg-gray-950 text-white">
       <div className="container mx-auto px-4">
@@ -86,46 +89,39 @@ const InteractiveFeatures = () => {
           {/* Lista de características */}
           <div className="space-y-2">
             {features.map((feature) => (
-              <HoverCard key={feature.id} openDelay={200} closeDelay={200}>
-                <HoverCardTrigger asChild>
-                  <button
-                    className={`group w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start gap-4 hover:bg-gray-900 ${
-                      activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : ''
-                    }`}
-                    onMouseEnter={() => setActiveFeature(feature)}
-                  >
-                    <div className="p-3 rounded-full bg-gray-800 text-accent group-hover:bg-accent/20">
-                      <feature.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-lg">{feature.title}</h3>
-                      <p className="text-gray-400 text-sm mt-1">{feature.description}</p>
-                    </div>
-                  </button>
-                </HoverCardTrigger>
-
-                <HoverCardContent 
-                  side="right" 
-                  align="start" 
-                  className="w-80 p-0 bg-gray-900 border-gray-800"
+              <div 
+                key={feature.id}
+                className="feature-item"
+                onMouseEnter={() => setActiveFeature(feature)}
+              >
+                <Button
+                  variant="ghost"
+                  className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start gap-4 hover:bg-gray-900 ${
+                    activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : ''
+                  }`}
                 >
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title} 
-                    className="rounded-md w-full h-auto object-cover"
-                  />
-                </HoverCardContent>
-              </HoverCard>
+                  <div className="p-3 rounded-full bg-gray-800 text-accent group-hover:bg-accent/20">
+                    <feature.icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg">{feature.title}</h3>
+                    <p className="text-gray-400 text-sm mt-1">{feature.description}</p>
+                  </div>
+                </Button>
+              </div>
             ))}
           </div>
 
           {/* Imagen destacada de la característica activa */}
-          <div className="relative hidden lg:block">
-            <div className="bg-gray-900 p-4 rounded-xl shadow-xl">
+          <div className="relative hidden lg:flex items-center justify-center">
+            <div 
+              className="bg-gray-900 p-4 rounded-xl shadow-xl w-full max-w-md overflow-hidden transition-all duration-500" 
+              style={{height: "400px"}}
+            >
               <img 
                 src={activeFeature.image} 
                 alt={activeFeature.title}
-                className="w-full h-auto rounded-lg object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
             <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-accent rounded-full"></div>
