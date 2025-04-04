@@ -85,43 +85,36 @@ const InteractiveFeatures = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Lista de características */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             {features.map((feature) => (
               <div 
                 key={feature.id}
                 className="feature-item"
                 onMouseEnter={() => setActiveFeature(feature)}
               >
-                <Button
-                  variant="ghost"
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start gap-4 hover:bg-gray-900 ${
-                    activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : ''
+                <div
+                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-3 hover:bg-gray-900 ${
+                    activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : 'border-l-4 border-transparent'
                   }`}
                 >
-                  <div className="p-3 rounded-full bg-gray-800 text-accent group-hover:bg-accent/20">
-                    <feature.icon className="w-6 h-6" />
+                  <div className="p-2 rounded-full bg-gray-800 text-accent flex-shrink-0">
+                    <feature.icon className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h3 className="font-medium text-lg">{feature.title}</h3>
-                    <p className="text-gray-400 text-sm mt-1">{feature.description}</p>
-                  </div>
-                </Button>
+                  <p className="font-medium">{feature.title}</p>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Imagen destacada de la característica activa */}
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div 
-              className="bg-gray-900 p-4 rounded-xl shadow-xl w-full max-w-md overflow-hidden transition-all duration-500" 
-              style={{height: "400px"}}
-            >
+          <div className="relative hidden lg:block h-[400px]">
+            <div className="absolute inset-0 overflow-hidden rounded-xl bg-gray-900">
               <img 
                 src={activeFeature.image} 
                 alt={activeFeature.title}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover transition-all duration-500 rounded-lg"
               />
             </div>
             <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-accent rounded-full"></div>
