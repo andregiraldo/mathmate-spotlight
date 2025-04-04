@@ -88,7 +88,7 @@ const InteractiveFeatures = () => {
               <div 
                 key={feature.id}
                 className="relative"
-                onMouseEnter={() => setActiveFeature(feature)}
+                /*onMouseEnter={() => setActiveFeature(feature)}*/
               >
                 <button
                   className={`group w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start gap-4 hover:bg-gray-900 ${
@@ -107,21 +107,34 @@ const InteractiveFeatures = () => {
                 {/* We'll only render the HoverCard content for desktop */}
                 <div className="hidden lg:block">
                   <HoverCard openDelay={200} closeDelay={200}>
-                    <HoverCardTrigger asChild>
-                      <div className="absolute inset-0 opacity-0" />
-                    </HoverCardTrigger>
-                    <HoverCardContent 
-                      side="right" 
-                      align="start" 
-                      className="w-80 p-0 bg-gray-900 border-gray-800"
-                    >
-                      <img 
-                        src={feature.image} 
-                        alt={feature.title} 
-                        className="rounded-md w-full h-auto object-cover"
-                      />
-                    </HoverCardContent>
-                  </HoverCard>
+  <HoverCardTrigger asChild>
+    <button
+      className={`group w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start gap-4 hover:bg-gray-900 ${
+        activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : ''
+      }`}
+      onMouseEnter={() => setActiveFeature(feature)}
+    >
+      <div className="p-3 rounded-full bg-gray-800 text-accent group-hover:bg-accent/20">
+        <feature.icon className="w-6 h-6" />
+      </div>
+      <div>
+        <h3 className="font-medium text-lg">{feature.title}</h3>
+        <p className="text-gray-400 text-sm mt-1">{feature.description}</p>
+      </div>
+    </button>
+  </HoverCardTrigger>
+  <HoverCardContent 
+    side="right" 
+    align="start" 
+    className="w-80 p-0 bg-gray-900 border-gray-800"
+  >
+    <img 
+      src={feature.image} 
+      alt={feature.title} 
+      className="rounded-md w-full h-auto object-cover"
+    />
+  </HoverCardContent>
+</HoverCard>
                 </div>
               </div>
             ))}
