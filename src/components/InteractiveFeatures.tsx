@@ -95,7 +95,7 @@ const InteractiveFeatures = () => {
                 onMouseEnter={() => setActiveFeature(feature)}
               >
                 <div
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-3 hover:bg-gray-900 ${
+                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-150 flex items-center gap-3 hover:bg-gray-900 ${
                     activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : 'border-l-4 border-transparent'
                   }`}
                 >
@@ -114,7 +114,7 @@ const InteractiveFeatures = () => {
               <img 
                 src={activeFeature.image} 
                 alt={activeFeature.title}
-                className="w-full h-full object-cover transition-all duration-500 rounded-lg"
+                className="w-full h-full object-cover transition-opacity duration-150 rounded-lg"
               />
             </div>
             <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-accent rounded-full"></div>
