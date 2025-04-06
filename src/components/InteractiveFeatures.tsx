@@ -139,7 +139,7 @@ const InteractiveFeatures = () => {
           </div>
         </div>
         
-        {/* Nueva sección AI + Matemáticas */}
+        {/* Nueva sección AI + Matemáticas con video */}
         <div className="mt-20 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -180,18 +180,20 @@ const InteractiveFeatures = () => {
             </div>
             
             <div className="relative h-full min-h-[300px] rounded-lg overflow-hidden flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
-                alt="IA y Matemáticas" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end">
-                <div className="p-6">
-                  <p className="text-xl font-bold text-white">
-                    "La matemática es el alfabeto con el que Dios ha escrito el universo, y ahora también la inteligencia artificial."
-                  </p>
-                  <p className="text-accent mt-2">— Inspirado en Galileo Galilei</p>
-                </div>
+              <div className="w-full h-full">
+                <iframe
+                  className="w-full h-full min-h-[300px] rounded-lg"
+                  src="https://www.youtube.com/embed/aircAruvnKk"
+                  title="Algoritmos de IA y matemáticas"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/80 to-transparent py-4 px-6">
+                <p className="text-lg font-bold text-white">
+                  "La matemática es el alfabeto con el que Dios ha escrito el universo, y ahora también la inteligencia artificial."
+                </p>
+                <p className="text-accent mt-1">— Inspirado en Galileo Galilei</p>
               </div>
             </div>
           </div>
