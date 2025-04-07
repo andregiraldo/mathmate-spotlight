@@ -50,9 +50,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight uppercase">
-            MATEMÁTICAS CON UNA<br/>
-            <span className="text-primary">PROFESORA DE MATEMÁTICAS</span><br/>
-            APRENDE DE MANERA EFECTIVA
+            MATEMÁTICAS Y TECNOLOGÍA<br/><span className="text-primary">SOLUCIONES PARA TU</span><br/>FUTURO
           </h1>
           
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
