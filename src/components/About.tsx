@@ -4,7 +4,10 @@ import { GraduationCap, Award, BookOpen, Users } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-secondary/50">
+    <section id="about" className="py-20 relative">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/50 to-primary/30 -z-10"></div>
+      
       <div className="mathmate-container">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent mb-6">
