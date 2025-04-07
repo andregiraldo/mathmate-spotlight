@@ -9,24 +9,22 @@ interface LogoProps {
 const Logo = ({ className = '', size = 'medium' }: LogoProps) => {
   // Size mapping for different logo variants
   const sizeClasses = {
-    small: 'text-xl',
-    medium: 'text-2xl',
-    large: 'text-3xl'
+    small: 'h-8',
+    medium: 'h-10',
+    large: 'h-12'
   };
   
   return (
-    <div className={`flex flex-col items-center ${className}`}>
-      {/* Integral symbol */}
-      <div className="text-primary mb-[-0.5rem]" style={{ fontSize: 'calc(1.5em)' }}>
-        ∫
-      </div>
-      
-      {/* Logo text */}
-      <div className={`font-bold tracking-tight ${sizeClasses[size]}`}>
-        <span className="text-foreground">Math</span>
-        <span className="text-primary mx-1">+</span>
-        <span className="text-foreground">IA</span>
-      </div>
+    <div className={`flex items-center ${className}`}>
+      <img 
+        src="/lovable-uploads/064472a0-1ad8-4bca-92bd-a4f8aa461e18.png" 
+        alt="Math+IA Logo" 
+        className={`${sizeClasses[size]} object-contain`}
+        style={{ 
+          filter: 'drop-shadow(0px 0px 2px rgba(0, 204, 255, 0.5))',
+          backgroundColor: 'transparent'
+        }}
+      />
     </div>
   );
 };
