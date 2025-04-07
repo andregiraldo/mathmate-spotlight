@@ -17,7 +17,7 @@ const Logo = ({ className = '', size = 'medium' }: LogoProps) => {
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/lovable-uploads/c26b5ece-c166-4e55-99a4-97a1c2d654b8.png" 
+        src="/lovable-uploads/a3641995-4707-4780-9570-1fc54e98883c.png" 
         alt="Math+IA Logo" 
         className={`${sizeClasses[size]} object-contain`}
       />
