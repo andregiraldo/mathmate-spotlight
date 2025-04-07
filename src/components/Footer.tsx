@@ -28,14 +28,17 @@ const Footer = () => {
           {/* Logo y descripción */}
           <div className="md:max-w-xs">
             <div className="flex items-center mb-4">
-              <div className="h-10">
+              <div className="h-12">
                 <img 
-                  src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
-                  alt="MathTech AI Logo" 
+                  src="/lovable-uploads/81d43a4b-b256-4b5b-b2f6-434e8586b17e.png" 
+                  alt="Math+IA Logo" 
                   className="h-full object-contain"
                 />
               </div>
             </div>
+            <p className="text-muted-foreground mt-2 mb-6">
+              <em className="text-primary/90">La inteligencia artificial empieza con una ecuación</em>
+            </p>
             <p className="text-muted-foreground mb-6">
               Potenciando el futuro a través de la educación matemática 
               especializada para carreras en tecnología, inteligencia artificial 
@@ -120,7 +123,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 text-center text-sm text-muted-foreground border-t border-muted pt-8">
-          <p>&copy; {currentYear} MathTech AI. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} Math+IA. Todos los derechos reservados.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <Link to="/privacy" className="hover:text-primary">Política de Privacidad</Link>
             <Link to="/terms" className="hover:text-primary">Términos y Condiciones</Link>

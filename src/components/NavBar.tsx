@@ -43,8 +43,8 @@ const NavBar = () => {
           <Link to="/" className="flex items-center">
             <div className="h-10">
               <img 
-                src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
-                alt="MathTech AI Logo" 
+                src="/lovable-uploads/81d43a4b-b256-4b5b-b2f6-434e8586b17e.png" 
+                alt="Math+IA Logo" 
                 className="h-full object-contain"
               />
             </div>

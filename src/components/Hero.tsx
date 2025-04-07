@@ -60,7 +60,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Desarrolla las habilidades matemáticas esenciales para las carreras tecnológicas del futuro en inteligencia artificial, ciencia de datos y desarrollo de software.
+            La inteligencia artificial empieza con una ecuación. Desarrolla las habilidades matemáticas esenciales para las carreras tecnológicas del futuro.
           </p>
           
           <div className="flex flex-col md:flex-row gap-6 justify-center">
