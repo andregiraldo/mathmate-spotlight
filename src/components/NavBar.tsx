@@ -1,86 +1,196 @@
 
 import React, { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
-import { MenuIcon, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { useMobile } from '@/hooks/use-mobile';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const NavBar = () => {
+  const isMobile = useMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      const offset = window.scrollY;
+      setScrolled(offset > 50);
     };
 
-    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <nav 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3",
-        isMobile 
-          ? (scrolled ? "bg-white shadow-md" : "bg-transparent") // Mobile: cambia a blanco con sombra
-          : (scrolled ? "glass-card" : "bg-transparent") // Desktop: mantiene el efecto glass-card
-      )}
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'backdrop-blur-lg bg-background/80 shadow-md' : ''
+      }`}
     >
-      <div className="mathmate-container flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-serif font-semibold text-primary">MathMate</span>
-        </Link>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center rounded">
+              <div className="w-4 h-4 bg-secondary rounded-sm"></div>
+            </div>
+            <span className="text-xl font-medium text-foreground">MathTech AI</span>
+          </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="nav-link">Inicio</Link>
-          <Link to="/about" className="nav-link">Sobre Mí</Link>
-          <Link to="/courses" className="nav-link">Cursos</Link>
-          <Link to="/blog" className="nav-link">Blog</Link>
-          <Link to="/testimonials" className="nav-link">Testimonios</Link>
-          <Link to="/contact" className="nav-link">Contacto</Link>
+          {/* Desktop Navigation */}
+          {!isMobile && (
+            <nav className="hidden md:flex items-center space-x-1">
+              <Link to="/" className="nav-link text-foreground hover:text-primary">Inicio</Link>
+              <Link to="/about" className="nav-link text-foreground hover:text-primary">Nosotros</Link>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-foreground hover:text-primary">Cursos</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-accent/50 to-accent p-6 no-underline outline-none focus:shadow-md"
+                              href="/courses"
+                            >
+                              <div className="mb-2 mt-4 text-lg font-medium text-accent-foreground">
+                                Ver todos los cursos
+                              </div>
+                              <p className="text-sm leading-tight text-accent-foreground/90">
+                                Explora nuestra oferta completa de cursos de matemáticas para tecnología
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <Link
+                            to="/courses/ai-math"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/20 hover:text-accent-foreground focus:bg-accent/20 focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">IA + Matemáticas</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Fundamentos matemáticos para Inteligencia Artificial
+                            </p>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/courses/data-math"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/20 hover:text-accent-foreground focus:bg-accent/20 focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Ciencia de Datos</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Estadísticas y análisis matemático para datos
+                            </p>
+                          </Link>
+                        </li>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <Link to="/testimonials" className="nav-link text-foreground hover:text-primary">Testimonios</Link>
+              <Link to="/blog" className="nav-link text-foreground hover:text-primary">Blog</Link>
+              <Link to="/contact" className="nav-link text-foreground hover:text-primary">Contacto</Link>
+            </nav>
+          )}
+
+          {/* Mobile menu button */}
+          {isMobile && (
+            <button onClick={toggleMenu} className="md:hidden text-foreground hover:text-primary">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
+
+          {/* Contact button (desktop) */}
+          {!isMobile && (
+            <div className="hidden md:flex items-center space-x-4">
+              <Link 
+                to="/contact"
+                className="inline-flex items-center justify-center px-4 py-2 border border-primary rounded-full text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+              >
+                Contactar
+              </Link>
+            </div>
+          )}
         </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden focus:outline-none" 
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
-        </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={cn(
-        "fixed inset-0 z-50 w-full h-full transform transition-transform duration-300 ease-in-out md:hidden pt-20",
-        isOpen ? "translate-x-0" : "translate-x-full",
-        "bg-white dark:bg-gray-900/95 shadow-lg"
-      )}>
-        <div className="flex flex-col items-center space-y-6 p-8 text-center">
-          <Link to="/" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Inicio</Link>
-          <Link to="/about" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Sobre Mí</Link>
-          <Link to="/courses" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Cursos</Link>
-          <Link to="/blog" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/testimonials" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Testimonios</Link>
-          <Link to="/contact" className="text-xl nav-link" onClick={() => setIsOpen(false)}>Contacto</Link>
+      {/* Mobile menu */}
+      {isMobile && isOpen && (
+        <div className="md:hidden bg-card/95 backdrop-blur-lg">
+          <div className="container px-4 py-3 space-y-1">
+            <Link 
+              to="/" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Inicio
+            </Link>
+            <Link 
+              to="/about" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Nosotros
+            </Link>
+            <div className="block py-2 px-3">
+              <div className="flex justify-between items-center">
+                <Link 
+                  to="/courses" 
+                  onClick={closeMenu}
+                  className="text-foreground hover:text-primary"
+                >
+                  Cursos
+                </Link>
+                <ChevronDown size={16} className="text-muted-foreground" />
+              </div>
+            </div>
+            <Link 
+              to="/testimonials" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Testimonios
+            </Link>
+            <Link 
+              to="/blog" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/contact" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Contacto
+            </Link>
+            <div className="pt-2 pb-3">
+              <Link 
+                to="/contact"
+                onClick={closeMenu}
+                className="w-full inline-flex items-center justify-center px-4 py-2 border border-primary rounded-full text-sm font-medium text-primary hover:bg-primary/10"
+              >
+                Contactar ahora
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 };
 

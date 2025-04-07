@@ -7,7 +7,9 @@ import {
   Code, 
   Network, 
   Lightbulb,
-  Cpu
+  Cpu,
+  Cloud,
+  ShieldCheck
 } from 'lucide-react';
 import {
   TooltipProvider,
@@ -74,19 +76,36 @@ const InteractiveFeatures = () => {
   const [activeFeature, setActiveFeature] = useState(features[0]);
   
   return (
-    <div className="py-20 bg-gray-950 text-white">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-accent">Matemáticas y la IA:</span> una 
-            <br className="md:hidden" /> convergencia necesaria
+    <div className="py-20 bg-background text-foreground relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-background/80 to-background"></div>
+        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-background/80 to-background"></div>
+        <div className="absolute h-full w-full opacity-30">
+          <svg width="100%" height="100%">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 204, 255, 0.1)" strokeWidth="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
+            <span className="text-primary">MATEMÁTICAS Y LA IA:</span> UNA 
+            <br className="md:hidden" /> CONVERGENCIA NECESARIA
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="h-1 w-40 mx-auto my-6 bg-primary"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Las matemáticas son el fundamento esencial para las carreras del futuro, especialmente en el desarrollo de la Inteligencia Artificial
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Lista de características */}
           <div className="space-y-3">
             {features.map((feature) => (
@@ -96,11 +115,12 @@ const InteractiveFeatures = () => {
                 onMouseEnter={() => setActiveFeature(feature)}
               >
                 <div
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-150 flex items-center gap-3 hover:bg-gray-900 ${
-                    activeFeature.id === feature.id ? 'bg-gray-900 border-l-4 border-accent' : 'border-l-4 border-transparent'
-                  }`}
+                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-150 flex items-center gap-3 
+                    ${activeFeature.id === feature.id ? 
+                      'bg-card border-l-4 border-primary' : 
+                      'border-l-4 border-transparent hover:bg-card/50'}`}
                 >
-                  <div className="p-2 rounded-full bg-gray-800 text-accent flex-shrink-0">
+                  <div className={`p-2 rounded-full ${activeFeature.id === feature.id ? 'bg-primary/20' : 'bg-muted'} text-primary flex-shrink-0`}>
                     <feature.icon className="w-5 h-5" />
                   </div>
                   <p className="font-medium">{feature.title}</p>
@@ -111,7 +131,7 @@ const InteractiveFeatures = () => {
 
           {/* Área de detalles para la característica activa */}
           <div className="lg:sticky lg:top-24">
-            <Card className="bg-gray-900 border-none overflow-hidden">
+            <Card className="glass-card border-primary/20 overflow-hidden">
               <CardContent className="p-0">
                 {/* Imagen destacada */}
                 <div className="relative h-[250px] overflow-hidden">
@@ -120,16 +140,17 @@ const InteractiveFeatures = () => {
                     alt={activeFeature.title}
                     className="w-full h-full object-cover transition-opacity duration-150"
                   />
-                  <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-accent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
+                  <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-primary"></div>
                 </div>
                 
                 {/* Descripción */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-white">{activeFeature.title}</h3>
-                  <p className="text-gray-300 mb-4">{activeFeature.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{activeFeature.title}</h3>
+                  <p className="text-muted-foreground mb-4">{activeFeature.description}</p>
                   
                   <div className="mt-4 flex justify-end">
-                    <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
+                    <Button className="bg-primary hover:bg-primary/80 text-foreground">
                       Aprender más
                     </Button>
                   </div>
@@ -140,57 +161,60 @@ const InteractiveFeatures = () => {
         </div>
         
         {/* Nueva sección AI + Matemáticas */}
-        <div className="mt-20 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-24 glass-card rounded-2xl p-8 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-white">
-                La IA está transformando el mundo, <span className="text-accent">las matemáticas son tu ventaja</span>
+              <h3 className="text-3xl font-bold text-foreground">
+                La IA está transformando el mundo, <span className="text-primary">las matemáticas son tu ventaja</span>
               </h3>
               
-              <p className="text-gray-300">
+              <p className="text-muted-foreground">
                 En un mundo donde la Inteligencia Artificial se integra cada vez más en nuestra vida cotidiana,
                 comprender las matemáticas que hay detrás de estos sistemas te da una ventaja competitiva en carreras
                 como desarrollo de software, ciencia de datos e ingeniería de sistemas.
               </p>
               
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-5 text-foreground">
                 <li className="flex items-start">
-                  <div className="rounded-full bg-accent/20 p-1 mr-3 mt-1">
-                    <Cpu className="w-4 h-4 text-accent" />
+                  <div className="rounded-full bg-primary/20 p-2 mr-3">
+                    <Cpu className="w-5 h-5 text-primary" />
                   </div>
                   <span>Los algoritmos de IA que usas diariamente están construidos sobre conceptos matemáticos</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="rounded-full bg-accent/20 p-1 mr-3 mt-1">
-                    <Code className="w-4 h-4 text-accent" />
+                  <div className="rounded-full bg-primary/20 p-2 mr-3">
+                    <Code className="w-5 h-5 text-primary" />
                   </div>
                   <span>El desarrollo de software moderno requiere sólidas habilidades matemáticas para optimización</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="rounded-full bg-accent/20 p-1 mr-3 mt-1">
-                    <Calculator className="w-4 h-4 text-accent" />
+                  <div className="rounded-full bg-primary/20 p-2 mr-3">
+                    <Calculator className="w-5 h-5 text-primary" />
                   </div>
                   <span>Las matemáticas te enseñan a pensar de forma lógica y estructurada, esencial para la programación</span>
                 </li>
               </ul>
               
-              <Button className="mt-4 bg-accent hover:bg-accent/90 text-white">
+              <Button className="mt-6 bg-primary hover:bg-primary/80 text-foreground">
                 Descubre nuestros cursos
               </Button>
             </div>
             
-            <div className="relative h-full min-h-[300px] rounded-lg overflow-hidden flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
-                alt="IA y Matemáticas" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end">
+            <div className="relative h-full min-h-[300px] rounded-lg overflow-hidden border-2 border-primary/20">
+              <iframe 
+                className="w-full h-full absolute inset-0"
+                src="https://www.youtube.com/embed/aircAruvnKk" 
+                title="Neural Networks - 3Blue1Brown"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end">
                 <div className="p-6">
-                  <p className="text-xl font-bold text-white">
+                  <p className="text-xl font-bold text-foreground">
                     "La matemática es el alfabeto con el que Dios ha escrito el universo, y ahora también la inteligencia artificial."
                   </p>
-                  <p className="text-accent mt-2">— Inspirado en Galileo Galilei</p>
+                  <p className="text-primary mt-2">— Inspirado en Galileo Galilei</p>
                 </div>
               </div>
             </div>

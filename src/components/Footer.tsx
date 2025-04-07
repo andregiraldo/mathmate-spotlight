@@ -1,116 +1,127 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Twitter, Linkedin, ChevronRight } from 'lucide-react';
+import { PhoneCall, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-primary text-primary-foreground pt-16 pb-6">
-      <div className="mathmate-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
-            <h2 className="text-2xl font-serif font-semibold mb-4">MathMate</h2>
-            <p className="text-primary-foreground/80 mb-6">
-              Transformando la forma en que aprendes matemáticas con métodos personalizados y efectivos.
+    <footer className="bg-background text-foreground relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-background/90 to-background"></div>
+        <div className="absolute h-full w-full opacity-20">
+          <svg width="100%" height="100%">
+            <defs>
+              <pattern id="footergrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 204, 255, 0.1)" strokeWidth="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#footergrid)" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between gap-12 pb-8 border-b border-muted">
+          {/* Logo y descripción */}
+          <div className="md:max-w-xs">
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-primary flex items-center justify-center rounded">
+                <div className="w-4 h-4 bg-secondary rounded-sm"></div>
+              </div>
+              <span className="text-xl font-medium text-foreground">MathTech AI</span>
+            </div>
+            <p className="text-muted-foreground mb-6">
+              Potenciando el futuro a través de la educación matemática 
+              especializada para carreras en tecnología, inteligencia artificial 
+              y ciencia de datos.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
-                <Instagram size={20} />
+              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="Facebook">
+                <Facebook size={20} />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="LinkedIn">
                 <Linkedin size={20} />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="YouTube">
+                <Youtube size={20} />
               </a>
             </div>
           </div>
-          
-          <div>
-            <h3 className="text-lg font-medium mb-4">Enlaces Rápidos</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Inicio
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Sobre Mí
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Cursos
-                </Link>
-              </li>
-              <li>
-                <Link to="/testimonials" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Testimonios
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-medium mb-4">Cursos</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/courses/algebra" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Álgebra
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses/calculo" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Cálculo
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses/estadistica" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Estadística
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses/geometria" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Geometría
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses/avanzado" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center">
-                  <ChevronRight size={16} className="mr-1" /> Matemáticas Avanzadas
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-medium mb-4">Contacto</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <Mail size={20} className="mt-1 flex-shrink-0" />
-                <a href="mailto:contact@mathmate.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  contact@mathmate.com
-                </a>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Phone size={20} className="mt-1 flex-shrink-0" />
-                <a href="tel:+34600123456" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  +34 600 123 456
-                </a>
-              </li>
-            </ul>
+
+          {/* Enlaces */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/" className="text-muted-foreground hover:text-primary">Inicio</Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-muted-foreground hover:text-primary">Nosotros</Link>
+                </li>
+                <li>
+                  <Link to="/courses" className="text-muted-foreground hover:text-primary">Cursos</Link>
+                </li>
+                <li>
+                  <Link to="/testimonials" className="text-muted-foreground hover:text-primary">Testimonios</Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-muted-foreground hover:text-primary">Contacto</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Cursos</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/courses/algebra" className="text-muted-foreground hover:text-primary">Álgebra para IA</Link>
+                </li>
+                <li>
+                  <Link to="/courses/calculus" className="text-muted-foreground hover:text-primary">Cálculo Avanzado</Link>
+                </li>
+                <li>
+                  <Link to="/courses/statistics" className="text-muted-foreground hover:text-primary">Estadística y Probabilidad</Link>
+                </li>
+                <li>
+                  <Link to="/courses/data-science" className="text-muted-foreground hover:text-primary">Matemáticas para Ciencia de Datos</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <PhoneCall size={18} className="text-primary mr-2 mt-1" />
+                  <span className="text-muted-foreground">+123 456 7890</span>
+                </li>
+                <li className="flex items-start">
+                  <Mail size={18} className="text-primary mr-2 mt-1" />
+                  <span className="text-muted-foreground">contacto@matematica-ai.com</span>
+                </li>
+                <li className="flex items-start">
+                  <MapPin size={18} className="text-primary mr-2 mt-1" />
+                  <span className="text-muted-foreground">Ciudad de México, México</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        
-        <div className="border-t border-primary-foreground/20 mt-12 pt-6 text-center text-primary-foreground/60 text-sm">
-          <p>&copy; {currentYear} MathMate. Todos los derechos reservados.</p>
+
+        <div className="mt-8 text-center text-sm text-muted-foreground border-t border-muted pt-8">
+          <p>&copy; {currentYear} MathTech AI. Todos los derechos reservados.</p>
+          <div className="mt-2 flex justify-center space-x-4">
+            <Link to="/privacy" className="hover:text-primary">Política de Privacidad</Link>
+            <Link to="/terms" className="hover:text-primary">Términos y Condiciones</Link>
+          </div>
         </div>
       </div>
     </footer>
