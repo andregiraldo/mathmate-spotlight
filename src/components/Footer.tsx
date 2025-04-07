@@ -27,11 +27,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between gap-12 pb-8 border-b border-muted">
           {/* Logo y descripción */}
           <div className="md:max-w-xs">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center rounded">
-                <div className="w-4 h-4 bg-secondary rounded-sm"></div>
+            <div className="flex items-center mb-4">
+              <div className="h-10">
+                <img 
+                  src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
+                  alt="MathTech AI Logo" 
+                  className="h-full object-contain"
+                />
               </div>
-              <span className="text-xl font-medium text-foreground">MathTech AI</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Potenciando el futuro a través de la educación matemática 

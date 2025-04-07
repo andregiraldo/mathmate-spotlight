@@ -40,11 +40,14 @@ const NavBar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center rounded">
-              <div className="w-4 h-4 bg-secondary rounded-sm"></div>
+          <Link to="/" className="flex items-center">
+            <div className="h-10">
+              <img 
+                src="/lovable-uploads/b4c509f7-5697-4c82-9cb8-06a05f2e68aa.png" 
+                alt="MathTech AI Logo" 
+                className="h-full object-contain"
+              />
             </div>
-            <span className="text-xl font-medium text-foreground">MathTech AI</span>
           </Link>
 
           {/* Desktop Navigation */}
