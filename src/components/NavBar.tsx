@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import Logo from './Logo';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -41,13 +41,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="h-10">
-              <img 
-                src="/lovable-uploads/81d43a4b-b256-4b5b-b2f6-434e8586b17e.png" 
-                alt="Math+IA Logo" 
-                className="h-full object-contain"
-              />
-            </div>
+            <Logo size="medium" />
           </Link>
 
           {/* Desktop Navigation */}

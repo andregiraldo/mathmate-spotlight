@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhoneCall, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,17 +28,8 @@ const Footer = () => {
           {/* Logo y descripción */}
           <div className="md:max-w-xs">
             <div className="flex items-center mb-4">
-              <div className="h-12">
-                <img 
-                  src="/lovable-uploads/81d43a4b-b256-4b5b-b2f6-434e8586b17e.png" 
-                  alt="Math+IA Logo" 
-                  className="h-full object-contain"
-                />
-              </div>
+              <Logo size="large" />
             </div>
-            <p className="text-muted-foreground mt-2 mb-6">
-              <em className="text-primary/90">La inteligencia artificial empieza con una ecuación</em>
-            </p>
             <p className="text-muted-foreground mb-6">
               Potenciando el futuro a través de la educación matemática 
               especializada para carreras en tecnología, inteligencia artificial 

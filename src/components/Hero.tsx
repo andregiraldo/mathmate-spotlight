@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight, Cloud, ShieldCheck, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Hero = () => {
   return (
