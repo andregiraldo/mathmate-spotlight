@@ -27,11 +27,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between gap-12 pb-8 border-b border-muted">
           {/* Logo y descripción */}
           <div className="md:max-w-xs">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center rounded">
-                <div className="w-4 h-4 bg-secondary rounded-sm"></div>
-              </div>
-              <span className="text-xl font-medium text-foreground">MathTech AI</span>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/59aea7a8-43d9-41be-a0cc-63c054d2a101.png" 
+                alt="Math+IA Logo" 
+                className="h-16"
+              />
             </div>
             <p className="text-muted-foreground mb-6">
               Potenciando el futuro a través de la educación matemática 
@@ -117,7 +118,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 text-center text-sm text-muted-foreground border-t border-muted pt-8">
-          <p>&copy; {currentYear} MathTech AI. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} Math+IA. Todos los derechos reservados.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <Link to="/privacy" className="hover:text-primary">Política de Privacidad</Link>
             <Link to="/terms" className="hover:text-primary">Términos y Condiciones</Link>
