@@ -201,13 +201,11 @@ const InteractiveFeatures = () => {
             </div>
             
             <div className="relative h-full min-h-[300px] rounded-lg overflow-hidden border-2 border-primary/20">
-              <iframe 
-                className="w-full h-full absolute inset-0"
-                src="https://www.youtube.com/embed/aircAruvnKk" 
-                title="Neural Networks - 3Blue1Brown"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                alt="Algoritmos y matemáticas en IA"
+                className="w-full h-full object-cover"
+              />
               
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end">
                 <div className="p-6">
