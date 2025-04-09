@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/cartoon-math-3.png",
+    image: "/lovable-uploads/foto-mate2.png",
     topics: [
       "Factorización y Polinomios",
       "Potenciación",
@@ -62,7 +62,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/cartoon-math-4.png",
+    image: "/lovable-uploads/foto-mate3.png",
     topics: [
       "Integrales Indefinidas",
       "Integrales Definidas",
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/cartoon-math-5.png",
+    image: "/lovable-uploads/foto-mate4.png",
     topics: [
       "Límites y continuidad",
       "Función",
@@ -100,7 +100,7 @@ export const courses: Course[] = [
     duration: "4 semanas",
     students: 3,
     price: "$150.000",
-    image: "/lovable-uploads/cartoon-math-6.png",
+    image: "/lovable-uploads/foto-mate5.png",
     topics: [
       "Funciones Trigonometricas",
       "Graficas",
@@ -120,7 +120,7 @@ export const courses: Course[] = [
     duration: "12 semanas",
     students: 95,
     price: "$320.000",
-    image: "/lovable-uploads/cartoon-math-7.png",
+    image: "/lovable-uploads/foto-mate6.png",
     topics: [
       "Estadística descriptiva",
       "Probabilidad y distribuciones",
