@@ -22,7 +22,7 @@ export const courses: Course[] = [
     duration: "60 minutos",
     students: 1,
     price: "$40.000",
-    image: "/lovable-uploads/fb972e5e-e2e8-480a-adb2-3570c7e26ef5.png",
+    image: "/lovable-uploads/Foto-mate1.png",
     topics: [
       "Ecuaciones lineales y sistemas",
       "Polinomios y factorización",
