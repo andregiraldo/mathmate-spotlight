@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { courses } from "../data/courses";
@@ -9,6 +8,7 @@ import {
   ArrowRight,
   Check,
   MessageCircle,
+  ChevronLeft,
 } from "lucide-react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -81,6 +81,9 @@ const CourseDetail = () => {
       <NavBar />
       <div className="pt-24 pb-12">
         <div className="mathmate-container">
+          <Link to="/courses" className="inline-flex items-center mb-6 text-accent hover:text-primary">
+            <ChevronLeft className="mr-1" size={20} /> Volver a cursos
+          </Link>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="animate-fade-right">
               <div className="mb-8">
