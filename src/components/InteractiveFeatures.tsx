@@ -32,7 +32,7 @@ const features = [
     icon: Calculator,
     title: "Fundamentos matemáticos para el futuro",
     description: "Las matemáticas son esenciales para entender y desarrollar modelos de IA cada vez más complejos",
-    image: "/lovable-uploads/foto-mate14.png"
+    image: "/lovable-uploads/foto-mate20.png"
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const features = [
     icon: Cpu,
     title: "IA en nuestro día a día",
     description: "Desde asistentes virtuales hasta recomendaciones personalizadas, la IA matemática nos rodea",
-    image: "/lovable-uploads/foto-mate19.jpg"
+    image: "/lovable-uploads/foto-mate19.png"
   }
 ];
 
