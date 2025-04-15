@@ -67,11 +67,11 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <button className="tech-button flex items-center justify-center gap-3">
               <Code size={20} className="text-primary" />
-              Desarrollo de Software
+              Cálculo Integral
             </button>
             <button className="tech-button flex items-center justify-center gap-3">
               <ShieldCheck size={20} className="text-primary" />
-              Ciencia de Datos
+              Cálculo Diferencial
             </button>
             <button className="tech-button flex items-center justify-center gap-3">
               <Cloud size={20} className="text-primary" />
@@ -90,7 +90,7 @@ const Hero = () => {
               <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M21.384,17.752a2.108,2.108,0,0,1-1.94,1.932c-1.73.253-3.464.38-5.2.38a34.257,34.257,0,0,1-5.2-.38,2.108,2.108,0,0,1-1.94-1.932A22.934,22.934,0,0,1,7.0,15.5a22.934,22.934,0,0,1,.1-2.248,2.108,2.108,0,0,1,1.94-1.932c1.73-.253,3.464-.38,5.2-.38a34.257,34.257,0,0,1,5.2.38,2.108,2.108,0,0,1,1.94,1.932A22.934,22.934,0,0,1,21.5,15.5,22.934,22.934,0,0,1,21.384,17.752ZM9.6,13.8l4.02,1.7L9.6,17.192Z"/>
               </svg>
-              <span className="ml-2">www.matematica-ai.com</span>
+              <span className="ml-2">www.mathia.com</span>
             </div>
           </div>
         </div>
