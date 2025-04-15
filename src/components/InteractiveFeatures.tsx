@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   BrainCircuit, 
@@ -78,7 +77,6 @@ const InteractiveFeatures = () => {
   
   return (
     <div className="py-20 bg-background text-foreground relative">
-      {/* Background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-background/80 to-background"></div>
         <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-background/80 to-background"></div>
@@ -106,7 +104,6 @@ const InteractiveFeatures = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Lista de características */}
           <div className="space-y-3">
             {features.map((feature) => (
               <div 
@@ -129,11 +126,9 @@ const InteractiveFeatures = () => {
             ))}
           </div>
 
-          {/* Área de detalles para la característica activa */}
           <div className="lg:sticky lg:top-24">
             <Card className="glass-card border-primary/20 overflow-hidden">
               <CardContent className="p-0">
-                {/* Imagen destacada */}
                 <div className="relative h-[250px] overflow-hidden">
                   <img 
                     src={activeFeature.image} 
@@ -144,7 +139,6 @@ const InteractiveFeatures = () => {
                   <div className="absolute -z-10 inset-0 blur-3xl opacity-20 bg-primary"></div>
                 </div>
                 
-                {/* Descripción */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-foreground">{activeFeature.title}</h3>
                   <p className="text-muted-foreground mb-4">{activeFeature.description}</p>
@@ -162,7 +156,6 @@ const InteractiveFeatures = () => {
           </div>
         </div>
         
-        {/* Nueva sección AI + Matemáticas */}
         <div className="mt-24 glass-card rounded-2xl p-8 shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
@@ -197,7 +190,7 @@ const InteractiveFeatures = () => {
                 </li>
               </ul>
               
-              <Link to="/blog">
+              <Link to="/courses">
                 <Button className="mt-6 bg-primary hover:bg-primary/80 text-foreground">
                   Descubre nuestros cursos
                 </Button>
