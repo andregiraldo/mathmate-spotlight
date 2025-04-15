@@ -59,7 +59,9 @@ const Features = () => {
           <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
             Metodología
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground uppercase">Nuestro Enfoque de Enseñanza</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4 text-foreground">
+            Nuestro Enfoque de <span className="text-primary">Enseñanza</span>
+          </h2>
           <div className="h-1 w-40 mx-auto my-6 bg-primary"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Características que distinguen nuestro método para lograr resultados efectivos
