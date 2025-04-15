@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   BrainCircuit, 
@@ -95,9 +94,8 @@ const InteractiveFeatures = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
-            <span className="text-primary">MATEMÁTICAS Y LA IA:</span> UNA 
-            <br className="md:hidden" /> CONVERGENCIA NECESARIA
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4 text-foreground">
+            Matemáticas y la IA: <span className="text-primary">Una Convergencia Necesaria</span>
           </h2>
           <div className="h-1 w-40 mx-auto my-6 bg-primary"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
