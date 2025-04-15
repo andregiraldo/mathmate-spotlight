@@ -38,13 +38,13 @@ const Hero = () => {
             <div className="relative">
               <div className="flex items-center justify-center gap-8">
                 <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
-                  <img src="/lovable-uploads/cartoon-math-4.png" alt="AI Code" className="w-full h-full object-cover" />
+                  <img src="/lovable-uploads/foto-mate10.png" alt="AI Code" className="w-full h-full object-cover" />
                 </div>
                 <div className="tech-circle glow-effect w-60 h-60 md:w-80 md:h-80 border-4 border-primary/30 z-10">
-                  <img src="/lovable-uploads/75e6df88-7d5d-44d5-861b-5ce0b13f43b4.png" alt="AI Technology" className="w-full h-full object-cover" />
+                  <img src="/lovable-uploads/foto-mate11.png" alt="AI Technology" className="w-full h-full object-cover" />
                 </div>
                 <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
-                  <img src="/lovable-uploads/cartoon-math-5.png" alt="AI Development" className="w-full h-full object-cover" />
+                  <img src="/lovable-uploads/foto-mate12.png" alt="AI Development" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
