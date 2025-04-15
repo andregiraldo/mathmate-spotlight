@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { BookingFormValues } from "@/components/booking/BookingForm";
 
 interface SubmitBookingParams {
-  data: BookingFormValues;
+  data: BookingFormValues & { paymentMethod?: string };
   courseId: string;
   courseTitle: string;
 }
@@ -20,7 +20,7 @@ export const submitBooking = async ({ data, courseId, courseTitle }: SubmitBooki
         name: data.name,
         email: data.email,
         phone: data.phone,
-        payment_method: data.paymentMethod,
+        payment_method: data.paymentMethod || "online", // Valor por defecto
         comments: data.comments || ""
       });
 
@@ -37,7 +37,7 @@ export const submitBooking = async ({ data, courseId, courseTitle }: SubmitBooki
         email: data.email,
         phone: data.phone,
         courseTitle: courseTitle,
-        paymentMethod: data.paymentMethod,
+        paymentMethod: data.paymentMethod || "online", // Valor por defecto
         comments: data.comments || ""
       };
       

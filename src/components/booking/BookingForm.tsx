@@ -13,13 +13,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
 // Form schema with validation
@@ -27,7 +20,6 @@ const formSchema = z.object({
   name: z.string().min(2, "El nombre es obligatorio"),
   email: z.string().email("Ingresa un correo electrónico válido"),
   phone: z.string().min(10, "Ingresa un número de teléfono válido"),
-  paymentMethod: z.enum(["online", "whatsapp"]),
   comments: z.string().optional(),
 });
 
@@ -46,7 +38,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ onSubmit, isSubmitting
       name: "",
       email: "",
       phone: "",
-      paymentMethod: "online",
       comments: "",
     },
   });
@@ -95,31 +86,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ onSubmit, isSubmitting
                 <FormControl>
                   <Input placeholder="Tu número de teléfono" {...field} />
                 </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="paymentMethod"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Método de contacto</FormLabel>
-                <Select 
-                  onValueChange={field.onChange} 
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un método" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="online">Pago en línea</SelectItem>
-                    <SelectItem value="whatsapp">Contactar por WhatsApp</SelectItem>
-                  </SelectContent>
-                </Select>
                 <FormMessage />
               </FormItem>
             )}

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   BrainCircuit, 
@@ -18,6 +19,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -148,9 +150,11 @@ const InteractiveFeatures = () => {
                   <p className="text-muted-foreground mb-4">{activeFeature.description}</p>
                   
                   <div className="mt-4 flex justify-end">
-                    <Button className="bg-primary hover:bg-primary/80 text-foreground">
-                      Aprender más
-                    </Button>
+                    <Link to="/blog">
+                      <Button className="bg-primary hover:bg-primary/80 text-foreground">
+                        Aprender más
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -193,9 +197,11 @@ const InteractiveFeatures = () => {
                 </li>
               </ul>
               
-              <Button className="mt-6 bg-primary hover:bg-primary/80 text-foreground">
-                Descubre nuestros cursos
-              </Button>
+              <Link to="/blog">
+                <Button className="mt-6 bg-primary hover:bg-primary/80 text-foreground">
+                  Descubre nuestros cursos
+                </Button>
+              </Link>
             </div>
             
             <div className="relative h-full min-h-[300px] rounded-lg overflow-hidden border-2 border-primary/20">

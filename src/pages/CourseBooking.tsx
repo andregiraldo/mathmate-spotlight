@@ -39,8 +39,14 @@ const CourseBooking = () => {
       
       const courseTitle = course?.title || "Curso no especificado";
       
+      // Para asegurar compatibilidad con el backend, añadimos paymentMethod con un valor por defecto
+      const dataWithPaymentMethod = {
+        ...data,
+        paymentMethod: "online" // Valor por defecto ya que eliminamos el campo
+      };
+      
       const result = await submitBooking({
-        data,
+        data: dataWithPaymentMethod,
         courseId,
         courseTitle
       });
@@ -106,22 +112,7 @@ const CourseBooking = () => {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <div className="container pt-20 pb-12">
-        <div className="text-sm breadcrumbs">
-          <ul>
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
-            <li>
-              <Link to="/courses">Cursos</Link>
-            </li>
-            <li>{course?.title}</li>
-            <li>Reserva</li>
-          </ul>
-        </div>
-      </div>
-
-      <section className="py-6 bg-secondary/50">
+      <section className="py-20 bg-secondary/50">
         <div className="mathmate-container">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Course Details */}
@@ -140,7 +131,6 @@ const CourseBooking = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
