@@ -38,19 +38,19 @@ const CourseDetail = () => {
   // Mock data since it's not in the course object
   const mockModules = [
     {
-      title: "Fundamentos",
-      description: "Conceptos básicos necesarios para avanzar en el curso",
-      topics: ["Introducción", "Conceptos clave", "Ejercicios básicos"]
+      title: "Fundamentos: Construyendo la base",
+      description: "Ideal para comenzar desde cero o reforzar lo aprendido en clases",
+      topics: ["Conceptos básicos explicados paso a paso", "Lecturas Interactivas", "Ejercicios guiados"]
     },
     {
-      title: "Aplicaciones prácticas",
-      description: "Cómo aplicar lo aprendido en situaciones reales",
-      topics: ["Problemas del mundo real", "Estudios de caso", "Proyectos"]
+      title: "Aplicaciones prácticas: Matemáticas para la vida real",
+      description: "Para que los estudiantes entiendan “¿para qué me sirve esto?”",
+      topics: ["Problemas del mundo real", "Estudios de caso", "Mini proyectos"]
     },
     {
-      title: "Nivel avanzado",
-      description: "Profundización en conceptos complejos",
-      topics: ["Técnicas avanzadas", "Resolución de problemas complejos", "Investigación"]
+      title: "Nivel avanzado: Para ir más allá",
+      description: "Desarrolla pensamiento crítico, ideal para estudiantes que quieren destacarse.",
+      topics: ["Técnicas avanzadas explicadas con claridad", "Desafíos y problemas complejos con apoyo visual", "Exploración con Inteligencia Artificial"]
     }
   ];
 
@@ -189,7 +189,6 @@ const CourseDetail = () => {
                 Requerimientos
               </h3>
               <ul className="list-disc pl-4 text-muted-foreground animate-fade-up">
-                <li>Conocimientos básicos de matemáticas</li>
                 <li>Cuaderno para tomar notas</li>
                 <li>Calculadora científica (opcional)</li>
               </ul>
