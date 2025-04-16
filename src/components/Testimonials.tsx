@@ -15,19 +15,19 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Carlos Méndez",
-    role: "Estudiante de Ingeniería",
+    name: "Liyibet Karina",
+    role: "Estudiante de Bachillerato",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     rating: 5,
-    comment: "La profesora María transformó completamente mi relación con las matemáticas. Sus métodos de enseñanza claros y su paciencia infinita me ayudaron a superar mis dificultades y ahora disfruto resolviendo problemas complejos."
+    comment: "Las clases de Matemáticas han sido excelentes. Mis hijos han aprendido muchísimo y se sienten cada vez más seguros y motivados. ¡Gracias por la dedicación y la claridad con la que enseña!."
   },
   {
     id: 2,
-    name: "Laura Gómez",
+    name: "XXX",
     role: "Estudiante de Bachillerato",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     rating: 5,
-    comment: "Gracias a las clases de la profesora María, pude mejorar significativamente mis calificaciones en matemáticas. Su enfoque personalizado y su capacidad para explicar conceptos difíciles de forma sencilla son incomparables."
+    comment: "Buenas noches profesora, quiero agradecerle por el gran trabajo que realiza, puedo decir que es excelente incluso la mejor en lo que hace. Dios la bendiga y nuevamente gracias."
   },
   {
     id: 3,
