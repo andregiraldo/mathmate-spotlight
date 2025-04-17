@@ -1,0 +1,64 @@
+
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+/* Special effects */
+.glass-card {
+  background: rgba(13, 32, 64, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 204, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 204, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(13, 32, 64, 0.7);
+  border: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+/* Tech glow effects */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(0, 204, 255, 0.3) 0%, rgba(22, 39, 66, 0) 70%);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.tech-circle {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tech-circle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 204, 255, 0.3), rgba(128, 0, 255, 0.3));
+  pointer-events: none;
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}

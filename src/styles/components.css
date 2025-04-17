@@ -1,0 +1,84 @@
+
+@tailwind components;
+
+@layer components {
+  .mathmate-container {
+    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Estilos unificados para títulos y subtítulos */
+  .section-title {
+    @apply text-4xl md:text-5xl font-semibold mb-4 text-foreground bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-normal mb-8 max-w-2xl mx-auto text-muted-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium transition-colors;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 right-0 bottom-0 h-[2px] bg-accent scale-x-0 transition-transform duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .blur-backdrop {
+    @apply bg-white/70 dark:bg-black/70 backdrop-blur-md;
+  }
+  
+  .tech-button {
+    @apply bg-card/80 border border-primary/30 text-foreground py-3 px-8 rounded-full text-lg transition-all hover:bg-primary/20 backdrop-blur-sm;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  /* Nuevos estilos para la navegación mejorada */
+  .section-nav {
+    @apply flex gap-2 overflow-x-auto py-4 px-2 snap-x scrollbar-none;
+  }
+  
+  .section-nav-item {
+    @apply px-4 py-2 rounded-full border border-primary/30 bg-card/60 backdrop-blur-sm whitespace-nowrap transition-all hover:bg-primary/20 snap-start;
+  }
+  
+  .section-nav-item.active {
+    @apply bg-primary/30 border-primary text-foreground;
+  }
+  
+  /* Estilos para la sección de videos */
+  .video-card {
+    @apply relative overflow-hidden rounded-xl border border-primary/20 bg-card/60 backdrop-blur-sm transition-all hover:shadow-lg hover:border-primary/50;
+  }
+  
+  .video-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-center justify-center opacity-0 transition-opacity hover:opacity-100;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    @apply fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-2;
+  }
+
+  .scroll-dot {
+    @apply w-3 h-3 rounded-full bg-muted transition-all cursor-pointer;
+  }
+
+  .scroll-dot.active {
+    @apply bg-primary w-4 h-4;
+  }
+}
