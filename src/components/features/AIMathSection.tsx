@@ -13,8 +13,8 @@ const AIMathSection = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
         <div className="space-y-6">
-          <h3 className="text-3xl font-bold text-foreground">
-            La IA está transformando el mundo, <span className="text-gradient text-primary">las matemáticas son tu ventaja</span>
+          <h3 className="text-3xl font-bold text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            La IA está transformando el mundo, <span className="text-gradient">las matemáticas son tu ventaja</span>
           </h3>
           
           <p className="text-muted-foreground">

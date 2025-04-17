@@ -71,7 +71,7 @@ const CoursePreview = () => {
         <div className="mt-12 text-center">
           <Link 
             to="/courses" 
-            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-accent to-primary px-6 py-3 text-base font-medium text-primary-foreground shadow transition-colors hover:opacity-90"
           >
             Ver todos los cursos <ArrowUpRight className="ml-2 h-4 w-4" />
           </Link>

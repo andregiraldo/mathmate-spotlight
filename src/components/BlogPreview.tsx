@@ -15,8 +15,11 @@ const BlogPreview = () => {
     <section className="py-16">
       <div className="mathmate-container">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Blog Matemático</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent mb-6">
+            Blog
+          </span>
+          <h2 className="section-title">Blog Matemático</h2>
+          <p className="section-subtitle">
             Explora nuestros últimos artículos y recursos para mejorar tus habilidades matemáticas.
           </p>
         </div>
@@ -56,7 +59,7 @@ const BlogPreview = () => {
 
         <div className="text-center mt-10">
           <Link to="/blog">
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="bg-gradient-to-r from-accent/10 to-primary/10 hover:bg-accent/20">
               Ver todos los artículos <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
