@@ -15,6 +15,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Videos from "./pages/Videos";
+import VideoPlayerPage from "./pages/VideoPlayerPage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/videos/:id" element={<VideoPlayerPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -97,6 +98,7 @@ const NavBar = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+              <Link to="/videos" className="nav-link text-foreground hover:text-primary">Videos</Link>
               <Link to="/testimonials" className="nav-link text-foreground hover:text-primary">Testimonios</Link>
               <Link to="/blog" className="nav-link text-foreground hover:text-primary">Blog</Link>
               <Link to="/contact" className="nav-link text-foreground hover:text-primary">Contacto</Link>
@@ -154,6 +156,13 @@ const NavBar = () => {
                 <ChevronDown size={16} className="text-muted-foreground" />
               </div>
             </div>
+            <Link 
+              to="/videos" 
+              onClick={closeMenu}
+              className="block py-2 px-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              Videos
+            </Link>
             <Link 
               to="/testimonials" 
               onClick={closeMenu}

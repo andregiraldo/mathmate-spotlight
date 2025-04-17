@@ -69,20 +69,6 @@ const VideoSection = () => {
           <button className="section-nav-item">Estadística</button>
         </div>
         
-        {/* Video destacado */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold mb-6 text-center">Video Destacado</h3>
-          <div className="aspect-video w-full rounded-xl overflow-hidden">
-            <iframe
-              src="https://www.youtube.com/embed/5mccm4x6vMw"
-              title="Video Destacado: Cálculo Integral"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
-          </div>
-        </div>
-        
         {/* Grid de videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredVideos.map(video => (
@@ -94,14 +80,12 @@ const VideoSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="video-overlay">
-                  <a 
-                    href={video.videoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <Link 
+                    to={`/videos/${video.id}`} 
                     className="bg-primary/80 hover:bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm transition-all"
                   >
                     <Play size={24} fill="white" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
                   {video.duration}
@@ -117,9 +101,9 @@ const VideoSection = () => {
                     <Video size={16} className="text-primary mr-2" />
                     <span className="text-xs text-muted-foreground">Tutorial</span>
                   </div>
-                  <button className="text-primary text-sm flex items-center hover:underline">
+                  <Link to={`/videos/${video.id}`} className="text-primary text-sm flex items-center hover:underline">
                     Ver <ArrowRight size={14} className="ml-1" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
