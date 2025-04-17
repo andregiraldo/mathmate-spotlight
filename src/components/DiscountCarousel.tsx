@@ -35,20 +35,6 @@ const DiscountCarousel = () => {
       image: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?q=80&w=1000&auto=format&fit=crop",
       link: "/courses",
     },
-    {
-      id: 4,
-      title: "Descuento para nuevos estudiantes",
-      description: "10% de descuento en tu primer mes de clases.",
-      image: "https://images.unsplash.com/photo-1625225234163-1590c9cc3ed4?q=80&w=1000&auto=format&fit=crop",
-      link: "/courses",
-    },
-    {
-      id: 5,
-      title: "Promoción de verano",
-      description: "Cursos intensivos con 15% de descuento.",
-      image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1000&auto=format&fit=crop",
-      link: "/courses",
-    },
   ];
 
   return (
