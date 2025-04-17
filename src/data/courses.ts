@@ -40,7 +40,7 @@ export const courses: Course[] = [
     duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
     students: "Entre 3 y 5",
     price: "$150.000",
-    image: "/lovable-uploads/foto-mate2.png",
+    image: "/lovable-uploads/foto-mate21.png",
     topics: [
       "Números y Operaciones Básicas",
       "Ecuaciones de primer grado",
