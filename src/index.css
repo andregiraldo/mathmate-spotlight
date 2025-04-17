@@ -138,6 +138,10 @@
   .tech-button {
     @apply bg-card/80 border border-primary/30 text-foreground py-3 px-8 rounded-full text-lg transition-all hover:bg-primary/20 backdrop-blur-sm;
   }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
 }
 
 /* Special effects */
@@ -186,3 +190,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animation for floating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
