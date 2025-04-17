@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { Input } from '../ui/input';
@@ -8,6 +7,7 @@ import { SubmissionSuccess } from './SubmissionSuccess';
 type FormData = {
   name: string;
   email: string;
+  phone: string;
   subject: string;
   message: string;
 };
@@ -16,6 +16,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -37,7 +38,7 @@ const ContactForm = () => {
       console.log('Form submitted:', formData);
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       
       // Reset submission message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
@@ -77,6 +78,21 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+        </div>
+        
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium mb-2">
+            Número de teléfono
+          </label>
+          <Input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Ej. +57 310 657 4475"
             className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
