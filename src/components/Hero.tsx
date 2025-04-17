@@ -61,6 +61,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Clases de Cálculo, Algebra y Matemáticas.
             Transformando la manera en que los estudiantes entienden y disfrutan de las matemáticas, con métodos de enseñanza personalizados y efectivos.
           </p>
           
