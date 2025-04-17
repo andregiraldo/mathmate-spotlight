@@ -51,7 +51,7 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
         <div className="flex items-center gap-2">
           <MessageCircle className="h-5 w-5 text-muted-foreground" />
           <a
-            href="https://wa.me/573106574475"
+            href="https://wa.me/573106574475?text=Hola!%20estuve%20viendo%20tu%20pagina%20de%20clases%20y%20estoy%20interesada%20en..."
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-accent"

@@ -22,7 +22,7 @@ const ContactInfo = () => {
           icon={<Phone size={24} />} 
           title="Teléfono" 
           content={
-            <a href="tel:+57 310 657 4475" className="text-muted-foreground hover:text-accent">
+            <a href="https://wa.me/573106574475?text=Hola!%20estuve%20viendo%20tu%20pagina%20de%20clases%20y%20estoy%20interesada%20en..." className="text-muted-foreground hover:text-accent">
               +57 310 657 4475
             </a>
           } 
