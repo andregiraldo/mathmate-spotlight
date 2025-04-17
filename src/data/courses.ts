@@ -5,7 +5,7 @@ export type Course = {
   description: string;
   level: string;
   duration: string;
-  students: number;
+  students: string;
   image: string;
   longDescription?: string;
   topics?: string[];
@@ -21,7 +21,7 @@ export const courses: Course[] = [
     level: "Todos los niveles",
     duration: "60 minutos",
     students: 1,
-    price: "$40.000",
+    price: "$35.000",
     image: "/lovable-uploads/foto-mate9.png",
     topics: [
       "Ecuaciones lineales y sistemas",
@@ -37,8 +37,8 @@ export const courses: Course[] = [
     description: "Aprende los conceptos básicos del álgebra que forman la base de las matemáticas avanzadas.",
     longDescription: "El curso de Álgebra Fundamental está diseñado para estudiantes que desean fortalecer sus bases matemáticas. Desde ecuaciones lineales hasta funciones cuadráticas, este curso te proporcionará las herramientas necesarias para resolver problemas algebraicos y te preparará para estudios más avanzados en matemáticas, ciencias e ingeniería.",
     level: "Principiante o Intermedio",
-    duration: "4 semanas",
-    students: 3,
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
     price: "$150.000",
     image: "/lovable-uploads/foto-mate2.png",
     topics: [
@@ -64,9 +64,9 @@ export const courses: Course[] = [
     description: "Comprende los elementos esenciales del álgebra lineal que sirven como base para la resolución de sistemas y el análisis vectorial",
     longDescription: "En esta sección introductoria del curso de Álgebra Lineal, explorarás conceptos como vectores, matrices, operaciones básicas y sistemas de ecuaciones lineales. Ideal para estudiantes que están comenzando en el mundo del álgebra lineal o que desean reforzar su comprensión antes de avanzar.",
     level: "Principiante o Intermedio",
-    duration: "4 semanas",
-    students: 3,
-    price: "$150.000",
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
+    price: "$200.000",
     image: "/lovable-uploads/foto-mate2.png",
     topics: [
       "Sistemas de Ecuaciones Líneales - Método Gauss",
@@ -83,10 +83,10 @@ export const courses: Course[] = [
     title: "Cálculo Integral",
     description: "Aprende a calcular áreas, volúmenes y resolver problemas con funciones continuas usando integrales.",
     longDescription: "El curso de Cálculo Integral te introduce en el análisis de funciones continuas a través del concepto de la integral. Estudiarás técnicas de integración, aplicaciones geométricas y físicas, y la conexión entre derivadas e integrales mediante el teorema fundamental del cálculo. Este curso te proporcionará una base sólida para resolver problemas en matemáticas, física, economía e ingeniería.",
-    level: "Intermedio",
-    duration: "4 semanas",
-    students: 3,
-    price: "$150.000",
+    level: "Principiante o Intermedio",
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
+    price: "$200.000",
     image: "/lovable-uploads/foto-mate3.png",
     topics: [
       "Integrales Indefinidas",
@@ -104,10 +104,10 @@ export const courses: Course[] = [
     title: "Cálculo Diferencial",
     description: "Domina las técnicas de diferenciación y sus aplicaciones en problemas del mundo real.",
     longDescription: "El curso de Cálculo Diferencial explora los conceptos fundamentales del cálculo, centrándose en límites de una función, continuidad, derivadas, resolver problemas de optimización e identificar máximos y mínimos. Aprenderás a calcular derivadas usando diferentes reglas y técnicas, y cómo aplicarlas para resolver problemas de optimización, tasas relacionadas y análisis de funciones. Este curso es esencial para estudiantes de ciencias, ingeniería y economía.",
-    level: "Intermedio",
-    duration: "4 semanas",
-    students: 3,
-    price: "$150.000",
+    level: "Principiante o Intermedio",
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
+    price: "$200.000",
     image: "/lovable-uploads/foto-mate4.png",
     topics: [
       "Inecuaciones",
@@ -124,9 +124,9 @@ export const courses: Course[] = [
     title: "Trigonometría",
     description: "Explora las funciones trigonométricas y su aplicación en la resolución de triángulos y fenómenos periódicos.",
     longDescription: "El curso de Trigonometría te permite comprender y aplicar las razones trigonométricas, las funciones seno, coseno y tangente, así como sus gráficas y transformaciones. Aprenderás a resolver triángulos, modelar movimientos periódicos y aplicar conceptos en contextos reales como la física, la arquitectura y la ingeniería. Este curso es esencial para avanzar en matemáticas y ciencias aplicadas.",
-    level: "Intermedio",
-    duration: "4 semanas",
-    students: 3,
+    level: "Principiante o Intermedio",
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
     price: "$150.000",
     image: "/lovable-uploads/foto-mate5.png",
     topics: [
@@ -147,9 +147,9 @@ export const courses: Course[] = [
     description: "Aprende a analizar datos, hacer predicciones y tomar decisiones basadas en evidencia.",
     longDescription: "El curso de Estadística y Probabilidad te introduce en el mundo del análisis de datos y la inferencia estadística. Desde la estadística descriptiva hasta los conceptos de probabilidad, distribuciones y pruebas de hipótesis, este curso te dará las herramientas para interpretar datos, hacer predicciones fundamentadas y tomar decisiones basadas en evidencia en diversos campos profesionales.",
     level: "Intermedio",
-    duration: "12 semanas",
-    students: 95,
-    price: "$320.000",
+    duration: "8 horas mensuales: 2 horas semanales ajustados a tu preferencia",
+    students: "Entre 3 y 5",
+    price: "$170.000",
     image: "/lovable-uploads/foto-mate6.png",
     topics: [
       "Estadística descriptiva",
