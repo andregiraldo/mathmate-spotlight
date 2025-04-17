@@ -66,34 +66,12 @@ const About = () => {
               
               <div className="flex items-start space-x-4">
                 <div className="bg-accent/10 p-3 rounded-full text-accent">
-                  <Award size={24} />
-                </div>
-                <div>
-                  {/* Actualiza tus reconocimientos */}
-                  <h4 className="font-medium mb-1">Reconocimiento a la Excelencia</h4>
-                  <p className="text-sm text-muted-foreground">Institución, Año</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent/10 p-3 rounded-full text-accent">
-                  <BookOpen size={24} />
-                </div>
-                <div>
-                  {/* Actualiza tus publicaciones o materiales */}
-                  <h4 className="font-medium mb-1">Tus Publicaciones</h4>
-                  <p className="text-sm text-muted-foreground">Detalles sobre tus materiales</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent/10 p-3 rounded-full text-accent">
                   <Users size={24} />
                 </div>
                 <div>
                   {/* Actualiza el número de estudiantes */}
                   <h4 className="font-medium mb-1">Estudiantes Guiados</h4>
-                  <p className="text-sm text-muted-foreground">500+ a lo largo de mi carrera</p>
+                  <p className="text-sm text-muted-foreground">900+ a lo largo de mi carrera</p>
                 </div>
               </div>
             </div>
