@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Play, Video, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,7 @@ const VideoSection = () => {
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "15:42",
       category: "Cálculo",
-      videoUrl: "https://youtube.com/shorts/5mccm4x6vMw?feature=share" // Ejemplo de URL de YouTube
+      videoUrl: "https://www.youtube.com/embed/5mccm4x6vMw" // Video URL actualizado al formato embed correcto
     },
     {
       id: 2,
@@ -73,8 +74,8 @@ const VideoSection = () => {
           <h3 className="text-2xl font-bold mb-6 text-center">Video Destacado</h3>
           <div className="aspect-video w-full rounded-xl overflow-hidden">
             <iframe
-              src={featuredVideos[0].videoUrl}
-              title={featuredVideos[0].title}
+              src="https://www.youtube.com/embed/5mccm4x6vMw"
+              title="Video Destacado: Cálculo Integral"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="w-full h-full"
