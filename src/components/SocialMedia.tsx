@@ -4,8 +4,8 @@ import { Users, Facebook, Instagram, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const socialStats = {
-  facebook: 12000, // Número de seguidores en Facebook
-  instagram: 8500,  // Número de seguidores en Instagram
+  facebook: 10030, // Número de seguidores en Facebook
+  instagram: 6329,  // Número de seguidores en Instagram
 };
 
 const SocialMediaSection = () => {
@@ -45,7 +45,7 @@ const SocialMediaSection = () => {
             platform="Facebook" 
             followers={socialStats.facebook} 
             icon={Facebook} 
-            url="https://www.facebook.com/tu-pagina"
+            url="https://www.facebook.com/share/19RoxrZCx2/"
             color="blue"
           />
 
@@ -54,7 +54,7 @@ const SocialMediaSection = () => {
             platform="Instagram" 
             followers={socialStats.instagram} 
             icon={Instagram} 
-            url="https://www.instagram.com/tu-pagina"
+            url="https://www.instagram.com/clasesdealgebraymatematic?igsh=azY0ZWtuaTY5b2I5"
             color="pink"
           />
         </div>
