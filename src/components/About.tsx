@@ -63,17 +63,6 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">Universidad Tecnologica de Pereira</p>
                 </div>
               </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent/10 p-3 rounded-full text-accent">
-                  <BookOpen size={24} />
-                </div>
-                <div>
-                  {/* Actualiza tus publicaciones o materiales */}
-                  <h4 className="font-medium mb-1">Tus Publicaciones</h4>
-                  <p className="text-sm text-muted-foreground">Detalles sobre tus materiales</p>
-                </div>
-              </div>
               
               <div className="flex items-start space-x-4">
                 <div className="bg-accent/10 p-3 rounded-full text-accent">
