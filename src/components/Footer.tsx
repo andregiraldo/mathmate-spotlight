@@ -98,15 +98,15 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <PhoneCall size={18} className="text-primary mr-2 mt-1" />
-                  <span className="text-muted-foreground">+123 456 7890</span>
+                  <span className="text-muted-foreground">+57 3217529132</span>
                 </li>
                 <li className="flex items-start">
                   <Mail size={18} className="text-primary mr-2 mt-1" />
-                  <span className="text-muted-foreground">contacto@matematica-ai.com</span>
+                  <span className="text-muted-foreground">maths.ia.edu@gmail.com</span>
                 </li>
                 <li className="flex items-start">
                   <MapPin size={18} className="text-primary mr-2 mt-1" />
-                  <span className="text-muted-foreground">Ciudad de México, México</span>
+                  <span className="text-muted-foreground">Bogotá, Colombia</span>
                 </li>
               </ul>
             </div>
