@@ -1,8 +1,11 @@
+
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { SubmissionSuccess } from './SubmissionSuccess';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/hooks/use-toast';
 
 type FormData = {
   name: string;
@@ -28,21 +31,117 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const openWhatsApp = () => {
+    // Crear el mensaje con todos los datos del formulario
+    const message = `*Nuevo mensaje de contacto*\n
+*Nombre:* ${formData.name}\n
+*Email:* ${formData.email}\n
+*Teléfono:* ${formData.phone || 'No proporcionado'}\n
+*Asunto:* ${formData.subject}\n
+*Mensaje:* ${formData.message}`;
+    
+    // Codificar el mensaje para la URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Número de WhatsApp (sin espacios ni caracteres especiales)
+    const phoneNumber = '573217529132';
+    
+    // Crear la URL de WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Abrir la URL en una nueva pestaña
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Función para enviar datos a Google Sheets
+  const sendToGoogleSheets = async () => {
+    try {
+      // Esta es una solución básica usando webhooks, en producción usaríamos un edge function
+      // Utilizar un webhook o servicio de integración (como Zapier o Make)
+      // El URL del webhook debería ser reemplazado por uno real
+      const response = await fetch('https://hook.eu1.make.com/YOUR_WEBHOOK_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString()
+        }),
+        mode: 'no-cors', // Necesario para evitar problemas de CORS con webhooks
+      });
+      
+      console.log('Datos enviados a Google Sheets');
+    } catch (error) {
+      console.error('Error al enviar datos a Google Sheets:', error);
+    }
+  };
+
+  // Función para guardar en Supabase
+  const saveToSupabase = async () => {
+    try {
+      const { error } = await supabase
+        .from('contact_form')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ]);
+      
+      if (error) throw error;
+      console.log('Datos guardados en Supabase');
+    } catch (error) {
+      console.error('Error al guardar en Supabase:', error);
+      toast({
+        title: "Error",
+        description: "No se pudieron guardar los datos. Por favor intenta de nuevo.",
+        variant: "destructive",
+      });
+    }
+  };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      // 1. Guardar en Supabase
+      await saveToSupabase();
+      
+      // 2. Intentar enviar a Google Sheets (debe configurarse el webhook)
+      await sendToGoogleSheets();
+      
+      // 3. Abrir WhatsApp
+      openWhatsApp();
+      
+      // Actualizar el estado del formulario
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       
+      // Mostrar notificación de éxito
+      toast({
+        title: "Mensaje enviado",
+        description: "Tu mensaje ha sido enviado correctamente.",
+      });
+      
       // Reset submission message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error al procesar el formulario:', error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {

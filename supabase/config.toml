@@ -1,1 +1,5 @@
+
 project_id = "pfkvehabumalciwwgluq"
+
+[functions.contact-form-to-sheets]
+verify_jwt = false
