@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Play, Video, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,28 +10,32 @@ const VideoSection = () => {
       title: "Cálculo Integral: Conceptos Fundamentales",
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "15:42",
-      category: "Cálculo"
+      category: "Cálculo",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Ejemplo de URL de YouTube
     },
     {
       id: 2,
       title: "Matemáticas para Machine Learning",
       thumbnail: "https://images.unsplash.com/photo-1669023414162-8b0573b9c6b2?q=80&w=2072&auto=format&fit=crop",
       duration: "12:23",
-      category: "IA"
+      category: "IA",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       id: 3,
       title: "Álgebra Lineal: Aplicaciones Prácticas",
       thumbnail: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2070&auto=format&fit=crop",
       duration: "18:15",
-      category: "Álgebra"
+      category: "Álgebra",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       id: 4,
       title: "Probabilidad y Estadística en la IA",
       thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2021&auto=format&fit=crop",
       duration: "21:30",
-      category: "IA"
+      category: "IA",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     }
   ];
 
@@ -65,6 +68,20 @@ const VideoSection = () => {
           <button className="section-nav-item">Estadística</button>
         </div>
         
+        {/* Video destacado */}
+        <div className="mb-16 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold mb-6 text-center">Video Destacado</h3>
+          <div className="aspect-video w-full rounded-xl overflow-hidden">
+            <iframe
+              src={featuredVideos[0].videoUrl}
+              title={featuredVideos[0].title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+        
         {/* Grid de videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredVideos.map(video => (
@@ -76,9 +93,14 @@ const VideoSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="video-overlay">
-                  <button className="bg-primary/80 hover:bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm transition-all">
+                  <a 
+                    href={video.videoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-primary/80 hover:bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm transition-all"
+                  >
                     <Play size={24} fill="white" />
-                  </button>
+                  </a>
                 </div>
                 <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
                   {video.duration}

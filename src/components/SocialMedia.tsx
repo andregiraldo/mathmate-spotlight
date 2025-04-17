@@ -1,17 +1,16 @@
-
 import React from 'react';
-import { Users, Facebook, Instagram, ExternalLink } from 'lucide-react';
+import { Users, Facebook, Instagram, ExternalLink, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const socialStats = {
-  facebook: 10030, // Número de seguidores en Facebook
-  instagram: 6329,  // Número de seguidores en Instagram
+  facebook: 10030,
+  instagram: 6329,
+  whatsapp: 150
 };
 
 const SocialMediaSection = () => {
   return (
     <section id="social-media" className="py-20 relative overflow-hidden">
-      {/* Background decorations */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/10 via-primary/5 to-accent/10"></div>
         <div className="absolute top-0 left-0 w-full h-full">
@@ -39,8 +38,7 @@ const SocialMediaSection = () => {
           Conéctate con miles de estudiantes y entusiastas de las matemáticas en nuestras redes sociales.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Facebook Card */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <SocialCard 
             platform="Facebook" 
             followers={socialStats.facebook} 
@@ -49,13 +47,20 @@ const SocialMediaSection = () => {
             color="blue"
           />
 
-          {/* Instagram Card */}
           <SocialCard 
             platform="Instagram" 
             followers={socialStats.instagram} 
             icon={Instagram} 
             url="https://www.instagram.com/clasesdealgebraymatematic?igsh=azY0ZWtuaTY5b2I5"
             color="pink"
+          />
+
+          <SocialCard 
+            platform="WhatsApp" 
+            followers={socialStats.whatsapp} 
+            icon={MessageSquare} 
+            url="https://chat.whatsapp.com/FHa2pAC6RKlGAY1kcXanHo"
+            color="green"
           />
         </div>
       </div>
@@ -68,7 +73,7 @@ interface SocialCardProps {
   followers: number;
   icon: React.ElementType;
   url: string;
-  color: 'blue' | 'pink';
+  color: 'blue' | 'pink' | 'green';
 }
 
 const SocialCard = ({ platform, followers, icon: Icon, url, color }: SocialCardProps) => {
@@ -84,6 +89,12 @@ const SocialCard = ({ platform, followers, icon: Icon, url, color }: SocialCardP
       hover: "group-hover:from-pink-600/80 group-hover:to-pink-700/80",
       light: "bg-pink-400",
       border: "border-pink-400/30"
+    },
+    green: {
+      background: "from-green-500/80 to-green-600/80",
+      hover: "group-hover:from-green-600/80 group-hover:to-green-700/80",
+      light: "bg-green-400",
+      border: "border-green-400/30"
     }
   };
 
@@ -100,19 +111,16 @@ const SocialCard = ({ platform, followers, icon: Icon, url, color }: SocialCardP
         "overflow-hidden group",
         colorVariants[color].border
       )}>
-        {/* Animated background */}
         <div className={cn(
           "absolute inset-0 -z-10 bg-gradient-to-br opacity-90 transition-all duration-500",
           colorVariants[color].background,
           colorVariants[color].hover
         )}></div>
         
-        {/* Glowing orb */}
         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-70 group-hover:scale-110">
           <div className={cn("w-full h-full rounded-full", colorVariants[color].light)}></div>
         </div>
 
-        {/* Content */}
         <div className="flex flex-col items-center z-20 relative">
           <div className="mb-4 p-4 bg-white/20 backdrop-blur-md rounded-full">
             <Icon size={40} className="text-white" />
@@ -131,7 +139,6 @@ const SocialCard = ({ platform, followers, icon: Icon, url, color }: SocialCardP
         </div>
       </div>
       
-      {/* Cards reflection */}
       <div className={cn(
         "absolute w-full h-32 bottom-0 left-0 transform translate-y-1/2 scale-[0.85] -z-10 opacity-30",
         "rounded-3xl blur-md",
