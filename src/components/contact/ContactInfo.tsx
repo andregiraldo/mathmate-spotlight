@@ -12,8 +12,8 @@ const ContactInfo = () => {
           icon={<Mail size={24} />} 
           title="Email" 
           content={
-            <a href="mailto:andrea.girald29@gmail.com" className="text-muted-foreground hover:text-accent">
-              andrea.girald29@gmail.com
+            <a href="mailto:maths.ia.edu@gmail.com" className="text-muted-foreground hover:text-accent">
+              maths.ia.edu@gmail.com
             </a>
           } 
         />
@@ -43,8 +43,8 @@ const ContactInfo = () => {
       <div className="mt-12">
         <h4 className="font-medium mb-4">Horario de atención</h4>
         <div className="space-y-2 text-muted-foreground">
-          <p>Lunes a Viernes: 9:00 - 19:00</p>
-          <p>Sábados: 08:00 - 12:00</p>
+          <p>Lunes a Viernes: 8:00 - 20:00</p>
+          <p>Sábados: 08:00 - 20:00</p>
           <p>Domingos: Cerrado</p>
         </div>
       </div>
