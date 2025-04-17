@@ -48,11 +48,19 @@ const CoursePreview = () => {
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Clock size={16} />
-                    <span>{course.duration}</span>
+                    <span>
+                      {course.id === "clase" 
+                        ? "60 min" 
+                        : "2h/semana"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Users size={16} />
-                    <span>{course.students} estudiantes</span>
+                    <span>
+                      {course.id === "clase" 
+                        ? "1 estudiante" 
+                        : "3-5 estudiantes"}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -1,13 +1,15 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, CreditCard, MessageCircle } from "lucide-react";
+import { ArrowLeft, CreditCard, MessageCircle, Clock, Users } from "lucide-react";
 
 interface CourseDetailsCardProps {
   courseId: string;
   title: string;
   description: string;
   price?: string;
+  duration?: string;
+  students?: string;
 }
 
 export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
@@ -15,6 +17,8 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
   title,
   description,
   price,
+  duration,
+  students,
 }) => {
   return (
     <div className="glass-card rounded-xl p-8 animate-fade-right">
@@ -32,6 +36,18 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
           <CreditCard className="h-5 w-5 text-muted-foreground" />
           <span>Precio: {price || "Consultar precio"}</span>
         </div>
+        {duration && (
+          <div className="flex items-center gap-2">
+            <Clock className="h-5 w-5 text-muted-foreground" />
+            <span>Duración: {duration}</span>
+          </div>
+        )}
+        {students && (
+          <div className="flex items-center gap-2">
+            <Users className="h-5 w-5 text-muted-foreground" />
+            <span>Grupo: {students}</span>
+          </div>
+        )}
         <div className="flex items-center gap-2">
           <MessageCircle className="h-5 w-5 text-muted-foreground" />
           <a

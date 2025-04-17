@@ -20,7 +20,7 @@ export const courses: Course[] = [
     longDescription: "Cada estudiante aprende de forma diferente, y en esta clase personalizada nos enfocamos en tu ritmo y necesidades. Con explicaciones claras, ejercicios adaptados y un enfoque práctico, harás que las matemáticas sean más comprensibles y hasta divertidas. ¡Atrévete a aprender sin miedo y a dominar los números con confianza!.",
     level: "Todos los niveles",
     duration: "60 minutos",
-    students: 1,
+    students: "1",
     price: "$35.000",
     image: "/lovable-uploads/foto-mate9.png",
     topics: [

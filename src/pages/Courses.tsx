@@ -51,11 +51,11 @@ const CoursesPage = () => {
                     <div className="flex justify-between text-sm text-muted-foreground mb-4">
                       <div className="flex items-center gap-1">
                         <Clock size={16} />
-                        <span>{course.duration}</span>
+                        <span>{course.id === "clase" ? course.duration : "8h mensuales"}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Users size={16} />
-                        <span>{course.students} estudiantes</span>
+                        <span>{course.id === "clase" ? "1 estudiante" : "3-5 estudiantes"}</span>
                       </div>
                     </div>
                     
