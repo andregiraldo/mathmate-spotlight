@@ -11,6 +11,7 @@ interface VideoData {
   videoUrl: string;
   category: string;
   duration: string;
+  thumbnail: string; // Added missing thumbnail property
 }
 
 const VideoPlayer = () => {
