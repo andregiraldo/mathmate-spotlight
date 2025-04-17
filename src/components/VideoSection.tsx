@@ -11,7 +11,7 @@ const VideoSection = () => {
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "15:42",
       category: "Cálculo",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Ejemplo de URL de YouTube
+      videoUrl: "https://youtube.com/shorts/5mccm4x6vMw?feature=share" // Ejemplo de URL de YouTube
     },
     {
       id: 2,
