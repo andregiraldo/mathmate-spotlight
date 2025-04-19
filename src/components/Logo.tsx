@@ -18,7 +18,7 @@ const Logo = ({ className = '', size = 'large' }: LogoProps) => {
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/lovable-uploads/logo-mate.png" 
+        src="/lovable-uploads/public/d53098dc-191c-47d2-a495-4e6e1e11c5fd.png" 
         alt="Clases de Cálculo y Algebra" 
         className={`${sizeClasses[size]} object-contain`}
       />
