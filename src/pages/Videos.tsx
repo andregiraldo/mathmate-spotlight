@@ -35,7 +35,7 @@ const Videos = () => {
       duration: "00:15",
       category: "Geometría",
       description: "Aprende a calcular el área del pentágono regular fácil y paso a paso. Ideal para estudiantes de geometría.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      videoUrl: "https://www.youtube.com/embed/bi0bX0xOQvQ"
     }
   ];
 
