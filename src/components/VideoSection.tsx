@@ -4,39 +4,31 @@ import { Play, Video, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const VideoSection = () => {
-  // Videos educativos destacados
+  // Videos educativos destacados// esta es la parte que aparece en la pagina principal
   const featuredVideos = [
     {
       id: 1,
-      title: "Cálculo Integral: Conceptos Fundamentales",
+      title: "Ecuaciones que cambiaron el mundo",
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
-      duration: "15:42",
+      duration: "00:36",
       category: "Cálculo",
       videoUrl: "https://www.youtube.com/embed/5mccm4x6vMw" // Video URL actualizado al formato embed correcto
     },
     {
       id: 2,
-      title: "Matemáticas para Machine Learning",
+      title: "Derivadas explicadas fácil desde cero",
       thumbnail: "https://images.unsplash.com/photo-1669023414162-8b0573b9c6b2?q=80&w=2072&auto=format&fit=crop",
-      duration: "12:23",
-      category: "IA",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      duration: "00:35",
+      category: "Cálculo",
+      videoUrl: "https://www.youtube.com/embed/CtSom05icc"
     },
     {
       id: 3,
-      title: "Álgebra Lineal: Aplicaciones Prácticas",
+      title: "sí se calcula el área del pentágono regular en segundos",
       thumbnail: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2070&auto=format&fit=crop",
-      duration: "18:15",
-      category: "Álgebra",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 4,
-      title: "Probabilidad y Estadística en la IA",
-      thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2021&auto=format&fit=crop",
-      duration: "21:30",
-      category: "IA",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      duration: "00:15",
+      category: "Geometría",
+      videoUrl: "https://www.youtube.com/embed/bi0bX0xOQvQ"
     }
   ];
 
