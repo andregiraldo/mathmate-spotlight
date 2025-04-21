@@ -23,57 +23,30 @@ const VideoPlayer = () => {
   const videos: VideoData[] = [
     {
       id: 1,
-      title: "Cálculo Integral: Conceptos Fundamentales",
-      description: "En este video, exploramos los conceptos básicos del cálculo integral, desde la definición de integral hasta las técnicas de integración más comunes. Aprenderás cómo aplicar estos conceptos a problemas del mundo real y cómo interpretar los resultados. Ideal para estudiantes de ingeniería, ciencias y matemáticas.",
+      title: "Ecuaciones que cambiaron el mundo",
+      description: "Las matemáticas están en todo lo que nos rodea, y algunas ecuaciones han transformado por completo la historia de la ciencia, la tecnología y la humanidad.\n\nEn este video te presentamos 19 ecuaciones clave que marcaron un antes y un después en el mundo:\n- Desde la ley de gravitación universal hasta la ecuación de Schrödinger\n- Desde la fórmula de Euler hasta la teoría de la relatividad\n- ¡Y muchas más!\n\nDescubre cómo estas fórmulas impactaron la física, la ingeniería, la informática, la economía y nuestra vida cotidiana.\n\n¿Estás listo para un viaje por las mentes más brillantes de la historia? ¡Dale play!",
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
-      duration: "15:42",
+      duration: "00:36",
       category: "Cálculo",
       videoUrl: "https://www.youtube.com/embed/5mccm4x6vMw"
     },
     {
       id: 2,
-      title: "Matemáticas para Machine Learning",
-      description: "Descubre los fundamentos matemáticos necesarios para comprender los algoritmos de machine learning, incluyendo álgebra lineal, cálculo multivariable y probabilidad.",
+      title: "Derivadas explicadas fácil desde cero",
+      description: "¿Te estás iniciando en el cálculo diferencial?\n\nEn este video te explicamos de forma clara y sencilla qué son las derivadas, cómo se interpretan y por qué son fundamentales en el estudio del cambio y el movimiento.\n\nAprenderás:\n- Qué es una derivada\n- Cómo aplicarla con ejemplos básicos\n- Por qué son esenciales para entender fenómenos como velocidad y crecimiento\n\nEste video es ideal para estudiantes que comienzan cálculo o quienes quieren repasar lo esencial. ¡Dale play y aprende paso a paso!",
       thumbnail: "https://images.unsplash.com/photo-1669023414162-8b0573b9c6b2?q=80&w=2072&auto=format&fit=crop",
-      duration: "12:23",
-      category: "IA",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      duration: "00:35",
+      category: "Cálculo",
+      videoUrl: "https://www.youtube.com/embed/CtSom05icc"
     },
     {
       id: 3,
-      title: "Álgebra Lineal: Aplicaciones Prácticas",
-      description: "Explora las aplicaciones prácticas del álgebra lineal en la ciencia de datos y la ingeniería, incluyendo transformaciones lineales, espacios vectoriales y matrices.",
+      title: "Así se calcula el área del pentágono regular en segundos",
+      description: "¿Sabes cómo calcular el área de un pentágono regular?\n\nEn este video aprenderás de forma sencilla y clara a hacerlo paso a paso. Ideal para estudiantes de matemáticas o cualquier persona que quiera entender mejor las figuras geométricas.\n\nVerás:\n- Qué es un pentágono regular\n- Cómo se calcula su área usando una fórmula práctica\n\n¡Dale play y aprende con nosotros!",
       thumbnail: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2070&auto=format&fit=crop",
-      duration: "18:15",
-      category: "Álgebra",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 4,
-      title: "Probabilidad y Estadística en la IA",
-      description: "Comprende cómo la probabilidad y la estadística son fundamentales para los modelos de inteligencia artificial, incluyendo distribuciones, inferencia estadística y modelos probabilísticos.",
-      thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2021&auto=format&fit=crop",
-      duration: "21:30",
-      category: "IA",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 5,
-      title: "Geometría Analítica: Vectores y Espacios",
-      description: "Aprende sobre vectores, espacios vectoriales y su aplicación en la geometría analítica, incluyendo productos escalares, vectoriales y transformaciones geométricas.",
-      thumbnail: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2070&auto=format&fit=crop",
-      duration: "16:45",
+      duration: "00:15",
       category: "Geometría",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 6,
-      title: "Estadística Inferencial y Análisis de Datos",
-      description: "Descubre cómo utilizar la estadística inferencial para analizar conjuntos de datos y extraer conclusiones, incluyendo pruebas de hipótesis, intervalos de confianza y regresiones.",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      duration: "19:30",
-      category: "Estadística",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      videoUrl: "https://www.youtube.com/embed/bi0bX0xOQvQ"
     }
   ];
 
