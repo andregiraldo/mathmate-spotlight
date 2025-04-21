@@ -24,7 +24,7 @@ const VideoSection = () => {
     },
     {
       id: 3,
-      title: "sí se calcula el área del pentágono regular en segundos",
+      title: "Así se calcula el área del pentágono regular en segundos",
       thumbnail: "/lovable-uploads/foto-mate30.png",
       duration: "00:15",
       category: "Geometría",
