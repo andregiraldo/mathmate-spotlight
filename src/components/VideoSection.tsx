@@ -17,7 +17,7 @@ const VideoSection = () => {
     {
       id: 2,
       title: "Derivadas explicadas fácil desde cero",
-      thumbnail: "/lovable-uploads/foto-mate31.png",
+      thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "00:35",
       category: "Cálculo",
       videoUrl: "https://www.youtube.com/embed/CtSom05icc"
@@ -25,7 +25,7 @@ const VideoSection = () => {
     {
       id: 3,
       title: "Así se calcula el área del pentágono regular en segundos",
-      thumbnail: "/lovable-uploads/foto-mate32.png",
+      thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "00:15",
       category: "Geometría",
       videoUrl: "https://www.youtube.com/embed/bi0bX0xOQvQ"
