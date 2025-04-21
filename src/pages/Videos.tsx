@@ -22,7 +22,7 @@ const Videos = () => {
     {
       id: 2,
       title: "Derivadas explicadas fácil desde cero",
-      thumbnail: "/lovable-uploads/foto-mate29.png",
+      thumbnail: "/lovable-uploads/foto-mate31.png",
       duration: "00:35",
       category: "Cálculo",
       description: "Aprende qué son las derivadas y cómo se usan, explicado fácil desde cero. Ideal si estás empezando cálculo.",
@@ -31,7 +31,7 @@ const Videos = () => {
     {
       id: 3,
       title: "Así se calcula el área del pentágono regular en segundos",
-      thumbnail: "/lovable-uploads/foto-mate30.png",
+      thumbnail: "/lovable-uploads/foto-mate32.png",
       duration: "00:15",
       category: "Geometría",
       description: "Aprende a calcular el área del pentágono regular fácil y paso a paso. Ideal para estudiantes de geometría.",
