@@ -12,56 +12,29 @@ const Videos = () => {
   const allVideos = [
     {
       id: 1,
-      title: "Cálculo Integral: Conceptos Fundamentales",
+      title: "Ecuaciones que cambiaron el mundo",
       thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
-      duration: "15:42",
+      duration: "00:36",
       category: "Cálculo",
-      description: "Aprende los conceptos básicos del cálculo integral y cómo aplicarlos en problemas prácticos.",
+      description: "Descubre las 19 ecuaciones matemáticas que transformaron el mundo. Desde la ley de gravitación hasta la ecuación de Schrödinger..",
       videoUrl: "https://www.youtube.com/embed/5mccm4x6vMw"
     },
     {
       id: 2,
-      title: "Matemáticas para Machine Learning",
+      title: "Derivadas explicadas fácil desde cero",
       thumbnail: "https://images.unsplash.com/photo-1669023414162-8b0573b9c6b2?q=80&w=2072&auto=format&fit=crop",
-      duration: "12:23",
-      category: "IA",
-      description: "Descubre los fundamentos matemáticos necesarios para comprender los algoritmos de machine learning.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      duration: "00:35",
+      category: "Cálculo",
+      description: "Aprende qué son las derivadas y cómo se usan, explicado fácil desde cero. Ideal si estás empezando cálculo.",
+      videoUrl: "https://www.youtube.com/embed/CtSom05icc"
     },
     {
       id: 3,
-      title: "Álgebra Lineal: Aplicaciones Prácticas",
+      title: "Así se calcula el área del pentágono regular en segundos",
       thumbnail: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2070&auto=format&fit=crop",
-      duration: "18:15",
-      category: "Álgebra",
-      description: "Explora las aplicaciones prácticas del álgebra lineal en la ciencia de datos y la ingeniería.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 4,
-      title: "Probabilidad y Estadística en la IA",
-      thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2021&auto=format&fit=crop",
-      duration: "21:30",
-      category: "IA",
-      description: "Comprende cómo la probabilidad y la estadística son fundamentales para los modelos de inteligencia artificial.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 5,
-      title: "Geometría Analítica: Vectores y Espacios",
-      thumbnail: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2070&auto=format&fit=crop",
-      duration: "16:45",
+      duration: "00:15",
       category: "Geometría",
-      description: "Aprende sobre vectores, espacios vectoriales y su aplicación en la geometría analítica.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      id: 6,
-      title: "Estadística Inferencial y Análisis de Datos",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      duration: "19:30",
-      category: "Estadística",
-      description: "Descubre cómo utilizar la estadística inferencial para analizar conjuntos de datos y extraer conclusiones.",
+      description: "Aprende a calcular el área del pentágono regular fácil y paso a paso. Ideal para estudiantes de geometría.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     }
   ];
