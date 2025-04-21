@@ -34,7 +34,7 @@ const VideoPlayer = () => {
       id: 2,
       title: "Derivadas explicadas fácil desde cero",
       description: "¿Te estás iniciando en el cálculo diferencial?\n\nEn este video te explicamos de forma clara y sencilla qué son las derivadas, cómo se interpretan y por qué son fundamentales en el estudio del cambio y el movimiento.\n\nAprenderás:\n- Qué es una derivada\n- Cómo aplicarla con ejemplos básicos\n- Por qué son esenciales para entender fenómenos como velocidad y crecimiento\n\nEste video es ideal para estudiantes que comienzan cálculo o quienes quieren repasar lo esencial. ¡Dale play y aprende paso a paso!",
-      thumbnail: "/lovable-uploads/foto-mate31.png",
+      thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "00:35",
       category: "Cálculo",
       videoUrl: "https://www.youtube.com/embed/CtSom05icc"
@@ -43,7 +43,7 @@ const VideoPlayer = () => {
       id: 3,
       title: "Así se calcula el área del pentágono regular en segundos",
       description: "¿Sabes cómo calcular el área de un pentágono regular?\n\nEn este video aprenderás de forma sencilla y clara a hacerlo paso a paso. Ideal para estudiantes de matemáticas o cualquier persona que quiera entender mejor las figuras geométricas.\n\nVerás:\n- Qué es un pentágono regular\n- Cómo se calcula su área usando una fórmula práctica\n\n¡Dale play y aprende con nosotros!",
-      thumbnail: "/lovable-uploads/foto-mate32.png",
+      thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
       duration: "00:15",
       category: "Geometría",
       videoUrl: "https://www.youtube.com/embed/bi0bX0xOQvQ"
