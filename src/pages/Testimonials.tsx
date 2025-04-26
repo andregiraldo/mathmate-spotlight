@@ -8,58 +8,31 @@ const TestimonialsPage = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Nombre del Estudiante 1",
+      name: "Liyibet Karina",
       role: "Curso o Nivel",
       image: "/foto-estudiante1.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 1. Puedes incluir más detalles aquí que en la versión resumida de la página principal."
+      date: "Febrero 2025",
+      comment: "Las clases de Matemáticas han sido excelentes. Mis hijos han aprendido muchísimo y se sienten cada vez más seguros y motivados. ¡Gracias por la dedicación y la claridad con la que enseña!."
     },
     {
       id: 2,
-      name: "Nombre del Estudiante 2",
+      name: "Melissa Ocampo",
       role: "Curso o Nivel",
       image: "/foto-estudiante2.jpg", // Ruta a la foto del estudiante
       rating: 5,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 2."
-    },
-    {
-      id: 3,
-      name: "Nombre del Estudiante 3",
-      role: "Curso o Nivel",
-      image: "/foto-estudiante3.jpg", // Ruta a la foto del estudiante
-      rating: 4,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 3."
-    },
-    {
-      id: 4,
-      name: "Nombre del Estudiante 4",
-      role: "Curso o Nivel",
-      image: "/foto-estudiante4.jpg", // Ruta a la foto del estudiante
-      rating: 5,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 4."
-    },
-    {
-      id: 5,
-      name: "Nombre del Estudiante 5",
-      role: "Curso o Nivel",
-      image: "/foto-estudiante5.jpg", // Ruta a la foto del estudiante
-      rating: 5,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 5."
-    },
-    {
-      id: 6,
-      name: "Nombre del Estudiante 6",
-      role: "Curso o Nivel",
-      image: "/foto-estudiante6.jpg", // Ruta a la foto del estudiante
-      rating: 4,
-      date: "Mes Año",
-      comment: "Testimonio completo del estudiante 6."
+      date: "Marzo 2025",
+      comment: "Buenas noches profesora, quiero agradecerle por el gran trabajo que realiza, puedo decir que es excelente incluso la mejor en lo que hace. Dios la bendiga y nuevamente gracias."
     }
+    // {
+    //  id: 3,
+    //  name: "Nombre del Estudiante 3",
+    //  role: "Curso o Nivel",
+    //  image: "/foto-estudiante3.jpg", // Ruta a la foto del estudiante
+    //  rating: 4,
+    //  date: "Mes Año",
+    //  comment: "Testimonio completo del estudiante 3."
+    //},
   ];
 
   return (
