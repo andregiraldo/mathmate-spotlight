@@ -36,14 +36,14 @@ const Hero = () => {
         <div className="text-center max-w-5xl mx-auto animate-fade-up">
           <div className="flex items-center justify-center mb-16">
             <div className="relative">
-              <div className="flex items-center justify-center gap-8">
-                <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="tech-circle glow-effect w-full max-w-[280px] h-[280px] md:w-64 md:h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate10.png" alt="AI Code" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-60 h-60 md:w-80 md:h-80 border-4 border-primary/30 z-10">
+                <div className="tech-circle glow-effect w-full max-w-[320px] h-[320px] md:w-80 md:h-80 border-4 border-primary/30 z-10">
                   <img src="/lovable-uploads/foto-mate11.png" alt="AI Technology" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
+                <div className="tech-circle glow-effect w-full max-w-[280px] h-[280px] md:w-64 md:h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate12.png" alt="AI Development" className="w-full h-full object-cover" />
                 </div>
               </div>
