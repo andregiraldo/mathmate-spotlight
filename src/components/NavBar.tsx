@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -40,12 +39,10 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
             <Logo size="large" />
           </Link>
 
-          {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="hidden md:flex items-center space-x-1">
               <Link to="/" className="nav-link text-foreground hover:text-primary">Inicio</Link>
@@ -71,28 +68,6 @@ const NavBar = () => {
                             </Link>
                           </NavigationMenuLink>
                         </li>
-                        <li>
-                          <Link
-                            to="/courses/ai-math"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/20 hover:text-accent-foreground focus:bg-accent/20 focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">IA + Matemáticas</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Fundamentos matemáticos para Inteligencia Artificial
-                            </p>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/courses/data-math"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/20 hover:text-accent-foreground focus:bg-accent/20 focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">Ciencia de Datos</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Estadísticas y análisis matemático para datos
-                            </p>
-                          </Link>
-                        </li>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -105,14 +80,12 @@ const NavBar = () => {
             </nav>
           )}
 
-          {/* Mobile menu button */}
           {isMobile && (
             <button onClick={toggleMenu} className="md:hidden text-foreground hover:text-primary">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           )}
 
-          {/* Contact button (desktop) */}
           {!isMobile && (
             <div className="hidden md:flex items-center space-x-4">
               <Link 
@@ -126,7 +99,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMobile && isOpen && (
         <div className="md:hidden bg-card/95 backdrop-blur-lg">
           <div className="container px-4 py-3 space-y-1">
