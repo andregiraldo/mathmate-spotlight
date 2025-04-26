@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Cloud, ShieldCheck, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -35,14 +36,14 @@ const Hero = () => {
         <div className="text-center max-w-5xl mx-auto animate-fade-up">
           <div className="flex items-center justify-center mb-16">
             <div className="relative">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="tech-circle glow-effect w-64 h-64 border-4 border-primary/30">
+              <div className="flex items-center justify-center gap-4 md:gap-8">
+                <div className="tech-circle glow-effect w-24 h-24 md:w-64 md:h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate10.png" alt="AI Code" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-64 h-64 md:w-80 md:h-80 border-4 border-primary/30 z-10">
+                <div className="tech-circle glow-effect w-32 h-32 md:w-80 md:h-80 border-4 border-primary/30 z-10">
                   <img src="/lovable-uploads/foto-mate11.png" alt="AI Technology" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-64 h-64 border-4 border-primary/30">
+                <div className="tech-circle glow-effect w-24 h-24 md:w-64 md:h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate12.png" alt="AI Development" className="w-full h-full object-cover" />
                 </div>
               </div>
