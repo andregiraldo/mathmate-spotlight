@@ -31,7 +31,7 @@ export const submitBooking = async ({ data, courseId, courseTitle }: SubmitBooki
 
     // 2. Enviar datos al webhook con manejo de errores mejorado
     try {
-      const webhookUrl = "https://n8n-nuevo-n8n.j3gxaw.easypanel.host/webhook-test/form";
+      const webhookUrl = "https://n8n-nuevo-n8n.j3gxaw.easypanel.host/webhook/form";
       const webhookData = {
         name: data.name,
         email: data.email,
