@@ -23,20 +23,20 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "XXX",
+    name: "Melissa Ocampo",
     role: "Estudiante de Bachillerato",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     rating: 5,
     comment: "Buenas noches profesora, quiero agradecerle por el gran trabajo que realiza, puedo decir que es excelente incluso la mejor en lo que hace. Dios la bendiga y nuevamente gracias."
-  },
-  {
-    id: 3,
-    name: "Miguel Torres",
-    role: "Estudiante de Física",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-    rating: 4,
-    comment: "La profesora tiene una habilidad única para hacer que las matemáticas sean interesantes y relevantes. Sus ejemplos prácticos y su entusiasmo por la materia son contagiosos. Altamente recomendada."
   }
+  // {
+  //  id: 3,
+  //  name: "Miguel Torres",
+  //  role: "Estudiante de Física",
+  //  image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  //   rating: 4,
+  //  comment: "La profesora tiene una habilidad única para hacer que las matemáticas sean interesantes y relevantes. Sus ejemplos prácticos y su entusiasmo por la materia son contagiosos. Altamente recomendada."
+ // }
 ];
 
 const Testimonials = () => {
