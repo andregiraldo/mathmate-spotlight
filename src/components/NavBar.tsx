@@ -58,9 +58,9 @@ const NavBar = () => {
                       <ul className="grid w-[400px] gap-3 p-4">
                         <li className="row-span-3">
                           <NavigationMenuLink asChild>
-                            <a
+                            <Link
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-accent/50 to-accent p-6 no-underline outline-none focus:shadow-md"
-                              href="/courses"
+                              to="/courses"
                             >
                               <div className="mb-2 mt-4 text-lg font-medium text-accent-foreground">
                                 Ver todos los cursos
@@ -68,7 +68,7 @@ const NavBar = () => {
                               <p className="text-sm leading-tight text-accent-foreground/90">
                                 Explora nuestra oferta completa de cursos de matemáticas para tecnología
                               </p>
-                            </a>
+                            </Link>
                           </NavigationMenuLink>
                         </li>
                         <li>
