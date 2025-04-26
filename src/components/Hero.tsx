@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Cloud, ShieldCheck, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -36,14 +35,14 @@ const Hero = () => {
         <div className="text-center max-w-5xl mx-auto animate-fade-up">
           <div className="flex items-center justify-center mb-16">
             <div className="relative">
-              <div className="flex items-center justify-center gap-8">
-                <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="tech-circle glow-effect w-64 h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate10.png" alt="AI Code" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-60 h-60 md:w-80 md:h-80 border-4 border-primary/30 z-10">
+                <div className="tech-circle glow-effect w-64 h-64 md:w-80 md:h-80 border-4 border-primary/30 z-10">
                   <img src="/lovable-uploads/foto-mate11.png" alt="AI Technology" className="w-full h-full object-cover" />
                 </div>
-                <div className="tech-circle glow-effect w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30">
+                <div className="tech-circle glow-effect w-64 h-64 border-4 border-primary/30">
                   <img src="/lovable-uploads/foto-mate12.png" alt="AI Development" className="w-full h-full object-cover" />
                 </div>
               </div>
@@ -80,7 +79,7 @@ const Hero = () => {
             </button>
           </div>
           
-          <div className="mt-12 flex items-center justify-center gap-6 text-muted-foreground">
+          <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 text-muted-foreground">
             <div className="flex items-center">
               <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
